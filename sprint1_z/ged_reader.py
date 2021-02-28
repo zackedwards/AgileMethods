@@ -4,8 +4,8 @@ import datetime
 
 print('Please enter the path file for your GEDCOM file (.ged)')
 #This is the local path file for my gedcom file
-#path = r'/Users/zackedwards/OneDrive - stevens.edu/Semester 6/555/AgileMethods/FamilyTree.ged'
-path = input("")
+path = r'C:\Users\Zack Edwards\OneDrive - stevens.edu\Semester 6\555\AgileMethods\milestone3\FamilyTree.ged'
+#path = input("")
 #open the file
 file = open(path, 'r')
 
@@ -119,8 +119,8 @@ families = families.append(row, ignore_index=True)
 #print and send to csv
 individuals.to_csv('individuals.csv')
 families.to_csv('families.csv')
-print(individuals.head(10))
-print(families.head(10))
+#print(individuals.head(10))
+#print(families.head(10))
 file.close()
 
 #part 2: print identifiers and names
