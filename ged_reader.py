@@ -4,10 +4,10 @@ import datetime
 
 print('Please enter the path file for your GEDCOM file (.ged)')
 #This is the local path file for my gedcom file
-path = r'C:\Users\Zack Edwards\OneDrive - stevens.edu\Semester 6\555\AgileMethods\milestone3\FamilyTree.ged'
+#path = r'C:\Users\Zack Edwards\OneDrive - stevens.edu\Semester 6\555\AgileMethods\milestone3\FamilyTree.ged'
 #path = input("")
 #open the file
-file = open(path, 'r')
+file = open('FamilyTree.ged', 'r')
 
 #Grab the current date
 currDate = datetime.datetime.now()
@@ -99,7 +99,7 @@ for line in file:
             row['Wife Name'] = individuals.loc[row["Wife ID"]]["Name"]
         elif "CHIL" in words:
             if "Children" in row.keys():
-                row["Children"] = str(row['Children']) + ', ' + str((words[-1][1:-1])) #mid kid list
+                row["Children"] = str(row["Children"]) + ', ' + str((words[-1][1:-1])) #mid kid list
             else:
                 row["Children"] = '{' + words[-1][1:-1] #start kid list
         elif deathFlag == True: #fulfilling the deathFlag
@@ -114,7 +114,7 @@ for line in file:
         elif divFlag == True:
             row["Divorced"] = words[2:]
             divFlag = False
-row["Children"] = str(row['Children']) + '}' #add final child for final row of families
+#row["Children"] = str(row["Children"]) + '}' #add final child for final row of families
 families = families.append(row, ignore_index=True)
 #print and send to csv
 individuals.to_csv('individuals.csv')
