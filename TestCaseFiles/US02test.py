@@ -7,11 +7,15 @@ import unittest
 import pandas as pd
 import datetime
 import sys
-sys.path.insert(0, '../AgileMethods')
+#sys.path.insert(0, '../AgileMethods')
 
 from ast import literal_eval
-from ged_reader import monthNumber
-    
+#from ged_reader import monthNumber
+
+def monthNumber(month):
+    months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']
+    return months.index(month) + 1
+
 # checks if birth happened before marriage. if not, error message prints
 def birth_before_marriage_check(individuals2, families2):
     errors = []
@@ -30,11 +34,9 @@ class Test(unittest.TestCase):
 
     def testBirthBeforeCurrentDate(self):
         #print(row)
-        self.assertEqual(birth_before_marriage_check(individualsDF, familiesDF), [])
+        self.assertEqual(birth_before_marriage_check(pd.read_csv('../Data/individuals.csv'), pd.read_csv('../Data/families.csv')), [])
 
 
 if __name__ == "__main__":
-    individualsDF = pd.read_csv('./Data/individuals.csv')
-    familiesDF = pd.read_csv('./Data/families.csv')
     #print(file.head())
     unittest.main()

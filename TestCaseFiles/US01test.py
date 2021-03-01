@@ -7,11 +7,16 @@ import unittest
 import pandas as pd
 import datetime
 import sys
-sys.path.insert(0, '../AgileMethods')
+
+#sys.path.insert(0, '../AgileMethods')
 
 from ast import literal_eval
-from ged_reader import monthNumber
-    
+#from ged_reader import monthNumber
+
+def monthNumber(month):
+    months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']
+    return months.index(month) + 1
+
 # checks if birth happened before the current date. if not, error message prints
 def birth_before_current_check(row):
     errors = []
@@ -38,6 +43,6 @@ class Test(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    file = pd.read_csv('./Data/individuals.csv')
+    file = pd.read_csv('../Data/individuals.csv')
     #print(file.head())
     unittest.main()
