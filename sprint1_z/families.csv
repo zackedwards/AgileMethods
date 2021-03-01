@@ -1,7 +1,0 @@
-,ID,Married,Divorced,Husband ID,Husband Name,Wife ID,Wife Name,Children
-0,F1,"['2', 'JUL', '1998']",,I2,"['Thomas', '/Wayne/']",I3,"['Martha', '/Kane/']",{I1}
-1,F2,"['2', 'JUL', '1960']",,I7,"['Frederick', '/Wayne/']",I8,"['Mary', '/Mork/']",{I2}
-2,F3,,,I5,"['Stephen', '/Kane/']",I6,"['Elizabeth', '/Jameson/']",{I3}
-3,F4,,,I1,"['Bat', '/Wayne/']",,,{I4}
-4,F5,"['9', 'OCT', '1950']","['2', 'APR', '1957']",I7,"['Frederick', '/Wayne/']",I9,"['Sophie', '/Smith/']",{I14}
-5,F6,"['2', 'MAY', '2000']",,I10,"['Kanye', '/West/']",I9,"['Sophie', '/Smith/']","{I11, I12, I13}"
