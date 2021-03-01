@@ -24,7 +24,7 @@ def age_less_than_150(row):
 def are_any_people_over_150(df):
     list_of_people_over_150 = []
 
-    for index, row in df.iterrow():
+    for index, row in df.iterrows():
         if row['Age'] >= 150:
             list_of_people_over_150.append(row['Name'])
 
@@ -46,6 +46,6 @@ class Test(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    file = pd.read_csv('./individuals.csv')
+    file = pd.read_csv('../Data/individuals.csv')
     #print(file.head())
     unittest.main()

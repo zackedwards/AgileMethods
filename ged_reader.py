@@ -2,7 +2,7 @@
 import pandas as pd
 import datetime
 
-print('Please enter the path file for your GEDCOM file (.ged)')
+#print('Please enter the path file for your GEDCOM file (.ged)')
 #This is the local path file for my gedcom file
 #path = r'C:\Users\Zack Edwards\OneDrive - stevens.edu\Semester 6\555\AgileMethods\milestone3\FamilyTree.ged'
 #path = input("")
@@ -117,18 +117,19 @@ for line in file:
 #row["Children"] = str(row["Children"]) + '}' #add final child for final row of families
 families = families.append(row, ignore_index=True)
 #print and send to csv
-individuals.to_csv('individuals.csv')
-families.to_csv('families.csv')
+individuals.to_csv('./Data/individuals.csv')
+families.to_csv('./Data/families.csv')
 #print(individuals.head(10))
 #print(families.head(10))
 file.close()
 
 #part 2: print identifiers and names
-individuals = individuals.rename(columns={'Name': 'Names'})
-print('List of individuals with ID and Name')
-for index, row in individuals.iterrows():
-    print('ID: ' + index + '    Name:', row['Names'])
-print()
-print('List of families')
-for index, row in families.iterrows():
-    print('ID:', index, '      Husband:', row['Husband Name'], '     Wife:',row['Wife Name'])
+# individuals = individuals.rename(columns={'Name': 'Names'})
+# print('List of individuals with ID and Name')
+# for index, row in individuals.iterrows():
+#     print('ID: ' + index + '    Name:', row['Names'])
+# print()
+# print('List of families')
+# for index, row in families.iterrows():
+#     print('ID:', index, '      Husband:', row['Husband Name'], '     Wife:',row['Wife Name'])
+print("Done creating csv's")
