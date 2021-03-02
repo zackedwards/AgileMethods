@@ -32,12 +32,13 @@ class Test(unittest.TestCase):
 
 
     def testBirthBeforeCurrentDate(self):
-        for index, row in file.iterrows():
+        file1 = pd.read_csv('../Data/individuals.csv')
+        for index, row in file1.iterrows():
             #print(row)
             self.assertEqual(birth_before_current_check(row), [])
 
 
 if __name__ == "__main__":
-    file = pd.read_csv('./Data/individuals.csv')
+    file1 = pd.read_csv('../Data/individuals.csv')
     #print(file.head())
     unittest.main()

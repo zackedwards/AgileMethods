@@ -7,7 +7,7 @@ import datetime
 #path = r'C:\Users\Zack Edwards\OneDrive - stevens.edu\Semester 6\555\AgileMethods\milestone3\FamilyTree.ged'
 #path = input("")
 #open the file
-file = open('FamilyTree.ged', 'r')
+file = open('./FamilyTree.ged', 'r')
 
 #Grab the current date
 currDate = datetime.datetime.now()
@@ -61,16 +61,16 @@ for line in file:
                 row['Alive'] = 'True'
             #append info to dataframe
             individuals = individuals.append(row, ignore_index=True)
-            row = {} #reset dictionary
-        row = {'ID': words[1][1:-1]} #start new row
-    elif 'FAM' in words[-1]: #filter for families
-        if str(individuals.index[0])[0] != 'I': #insert the last individual in the dataframe
+            row = {}  # reset dictionary
+        row = {'ID': words[1][1:-1]}  # start new row
+    elif 'FAM' in words[-1]:  # filter for families
+        if str(individuals.index[0])[0] != 'I':  # insert the last individual in the dataframe
             individuals = individuals.append(row, ignore_index=True)
-            row = {} #reset the row
-            individuals = individuals.set_index('ID') #set index to ID
-        elif row != {}: #if row is not blank
-            row["Children"] = str(row['Children']) + '}' #add final child
-            families = families.append(row, ignore_index=True)#append row to database
+            row = {}  # reset the row
+            individuals = individuals.set_index('ID')  # set index to ID
+        elif row != {}:  # if row is not blank
+            row["Children"] = str(row['Children']) + '}'  # add final child
+            families = families.append(row, ignore_index=True)  # append row to database
             row = {}
         row = {'ID': words[1][1:-1]}
     #if '1' in words[0] and words[1] != 
