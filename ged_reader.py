@@ -7,7 +7,7 @@ import datetime
 #path = r'C:\Users\Zack Edwards\OneDrive - stevens.edu\Semester 6\555\AgileMethods\milestone3\FamilyTree.ged'
 #path = input("")
 #open the file
-file = open('./FamilyTree.ged', 'r')
+file = open('../FamilyTree.ged', 'r')
 
 #Grab the current date
 currDate = datetime.datetime.now()
@@ -117,8 +117,8 @@ for line in file:
 #row["Children"] = str(row["Children"]) + '}' #add final child for final row of families
 families = families.append(row, ignore_index=True)
 #print and send to csv
-individuals.to_csv('./Data/individuals.csv')
-families.to_csv('./Data/families.csv')
+individuals.to_csv('../Data/individuals.csv')
+families.to_csv('../Data/families.csv')
 #print(individuals.head(10))
 #print(families.head(10))
 file.close()
