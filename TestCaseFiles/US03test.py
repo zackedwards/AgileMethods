@@ -3,14 +3,14 @@ Created on Feb 27, 2021
 
 @author: Zack Edwards
 '''
-from ged_reader import monthNumber
-from ast import literal_eval
-
+import sys
 import unittest
 import pandas as pd
 import datetime
-import sys
 sys.path.insert(0, '../AgileMethods')
+
+from ged_reader import monthNumber
+from ast import literal_eval
 
 
 def BirthBeforeDeath(row):
@@ -34,24 +34,24 @@ def BirthBeforeDeath(row):
 class Test(unittest.TestCase):
 
     def testBirthBeforeDeathAll(self):
-        file = pd.read_csv('../Data/individuals.csv')
+        file = pd.read_csv('./Data/individuals.csv')
         for index, row in file.iterrows():
             self.assertEqual(BirthBeforeDeath(row), True)
 
     def testBirthBeforeDeath1(self):
-        file = pd.read_csv('../Data/individuals.csv')
+        file = pd.read_csv('./Data/individuals.csv')
         self.assertEqual(BirthBeforeDeath(file.iloc[2]), True)
 
     def testBirthBeforeDeath2(self):
-        file = pd.read_csv('../Data/individuals.csv')
+        file = pd.read_csv('./Data/individuals.csv')
         self.assertEqual(BirthBeforeDeath(file.iloc[6]), True)
 
     def testBirthBeforeDeath3(self):
-        file = pd.read_csv('../Data/individuals.csv')
+        file = pd.read_csv('./Data/individuals.csv')
         self.assertEqual(BirthBeforeDeath(file.iloc[8]), True)
 
     def testBirthBeforeDeath4(self):
-        file = pd.read_csv('../Data/individuals.csv')
+        file = pd.read_csv('./Data/individuals.csv')
         self.assertEqual(BirthBeforeDeath(file.iloc[7]), True)
 
     def testBirthBeforeDeath5(self):
