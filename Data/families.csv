@@ -1,7 +1,5 @@
 ,ID,Married,Divorced,Husband ID,Husband Name,Wife ID,Wife Name,Children
-0,F1,"['2', 'JUL', '1998']",,I2,"['Thomas', '/Wayne/']",I3,"['Martha', '/Kane/']",{I1}
-1,F2,"['2', 'JUL', '1960']",,I7,"['Frederick', '/Wayne/']",I8,"['Mary', '/Mork/']",{I2}
-2,F3,,,I5,"['Stephen', '/Kane/']",I6,"['Elizabeth', '/Jameson/']",{I3}
-3,F4,,,I1,"['Bat', '/Wayne/']",,,{I4}
-4,F5,"['9', 'OCT', '1950']","['2', 'APR', '1957']",I7,"['Frederick', '/Wayne/']",I9,"['Sophie', '/Smith/']",{I14}
-5,F6,"['2', 'MAY', '2000']",,I10,"['Kanye', '/West/']",I9,"['Sophie', '/Smith/']","{I11, I12, I13"
+0,F1,"['8', 'OCT', '2001']",,I2,"['Michael', '/Faustino/']",I3,"['Lilibeth', '/Ajero/']","{I1, I4, I15}"
+1,F2,,,I11,"['Ryan', '/Faustino/']",I12,"['Erica', '/Faustino/']","{I2, I13}"
+2,F3,,,I5,['/Ajero/'],I6,"['Erica', '/Lee/']","{I3, I7, I9}"
+3,F6,"['12', 'OCT', '1999']","['11', 'OCT', '2005']",I13,"['Kyle', '/Faustino/']",I14,"['Lily', '/Balleras/']",

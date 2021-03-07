@@ -43,8 +43,9 @@ def main():
                             age -= 1
                     row['Age'] = age
                     row['Alive'] = 'False'
-                else:
+                elif 'Birthday' in row.keys():
                     #calculate age if alive
+                    print(row)
                     yearDiff = int(currDate.year) - int(row['Birthday'][-1])
                     monthDiff = currDate.month - int(monthNumber(row['Birthday'][-2]))
                     dayDiff = int(currDate.day) - int(row['Birthday'][-3])
@@ -65,7 +66,7 @@ def main():
                 individuals = individuals.append(row, ignore_index=True)
                 row = {}  # reset the row
                 individuals = individuals.set_index('ID')  # set index to ID
-            elif row != {}:  # if row is not blank
+            elif row != {} and 'Children' in row.keys():  # if row is not blank
                 row["Children"] = str(row['Children']) + '}'  # add final child
                 families = families.append(row, ignore_index=True)  # append row to database
                 row = {}
@@ -116,8 +117,8 @@ def main():
     #print and send to csv
     individuals.to_csv('./Data/individuals.csv')
     families.to_csv('./Data/families.csv')
-    #print(individuals.head(10))
-    #print(families.head(10))
+    print(individuals.head(10))
+    print(families.head(10))
     file.close()
 
 #part 2: print identifiers and names
