@@ -17,16 +17,16 @@ def MaleLastNames(fam_row, indi_df):
             if row['Name'][1] != husband_last_name:
                 errors.append("ERROR: FAMILY: US16: {}: Child {} does not have father's last name".format(fam_row["ID"], row['ID']))
 
-    print(errors)
+    #print(errors)
     return errors
 
 
 class Test(unittest.TestCase):
 
     def testMaleLastNames(self):
-        file = pd.read_csv('families.csv')
+        file = pd.read_csv('./Data/families.csv')
         for index, row in file.iterrows():
-            self.assertEqual(MaleLastNames(row, pd.read_csv('individuals.csv')), [])
+            self.assertEqual(MaleLastNames(row, pd.read_csv('./Data/individuals.csv')), [])
 
     
 

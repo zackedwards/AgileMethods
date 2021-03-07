@@ -57,8 +57,8 @@ class Test(unittest.TestCase):
     def testBirthBeforeDeath5(self):
         expected_err = ["ERROR: INDIVIDUAL: US03: Test Died: ['10','NOV','1998'] "
                         "occurs before Birth: ['11','DEC','1999']"]
-        self.assertEqual(BirthBeforeDeath({'Alive': False, 'ID': 'Test', 'Birthday': "['11','DEC','1999']",
-                                           'Death': "['10','NOV','1998']"}), False)
+        self.assertFalse(BirthBeforeDeath({'Alive': False, 'ID': 'Test', 'Birthday': "['11','DEC','1999']",
+                                           'Death': "['10','NOV','1998']"}))
 
 
 if __name__ == "__main__":

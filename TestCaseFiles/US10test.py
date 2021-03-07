@@ -7,14 +7,11 @@ import unittest
 import pandas as pd
 import datetime
 import sys
-#sys.path.insert(0, '../AgileMethods')
+sys.path.insert(0, '../AgileMethods')
 
 from ast import literal_eval
-#from ged_reader import monthNumber
+from functions import monthNumber
 
-def monthNumber(month):
-    months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']
-    return months.index(month) + 1
 #get marriage date and both ages of the people married
 def marriageAfterFourteen(individuals2, families2):
     errors = []
@@ -30,7 +27,7 @@ def marriageAfterFourteen(individuals2, families2):
                     marriage_dt = datetime.datetime(int(marriage[2]), monthNumber(marriage[1]), int(marriage[0]))
                     duration_in_s = (marriage_dt - birth_dt).total_seconds()
                     years = divmod(duration_in_s, 31536000)[0]
-                    print(years)
+                    #print(years)
                     if years < 14:
                         errors.append("ERROR: INDIVIDUAL: US10: {}: Married {} before age 14".format(row_indi["ID"], marriage_dt.date()))
     return errors
@@ -39,7 +36,7 @@ class Test(unittest.TestCase):
 
 
     def testMarriageAfterFourteen(self):
-        self.assertEqual(marriageAfterFourteen(pd.read_csv('../Data/individuals.csv'), pd.read_csv('../Data/families.csv')), [])
+        self.assertEqual(marriageAfterFourteen(pd.read_csv('./Data/individuals.csv'), pd.read_csv('./Data/families.csv')), [])
 
 if __name__ == "__main__":
     #print(file.head())

@@ -57,8 +57,8 @@ class Test(unittest.TestCase):
     def testMarriageBeforeDivorce5(self):
         expected_err = ["ERROR: FAMILY: US03: Test: Divorced: ['10','NOV','1998'] "
                         "occurs before Marriage: ['11','DEC','1999']"]
-        self.assertEqual(MarriageBeforeDivorce({'ID': 'Test', 'Married': "['11','DEC','1999']",
-                                           'Divorced': "['10','NOV','1998']"}), False)
+        self.assertFalse(MarriageBeforeDivorce({'ID': 'Test', 'Married': "['11','DEC','1999']",
+                                           'Divorced': "['10','NOV','1998']"}))
 
 
 if __name__ == "__main__":

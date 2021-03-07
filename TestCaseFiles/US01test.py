@@ -31,48 +31,11 @@ class Test(unittest.TestCase):
 
 
     def testBirthBeforeCurrentDate(self):
-        file1 = pd.read_csv('../Data/individuals.csv')
+        file1 = pd.read_csv('./Data/individuals.csv')
         for index, row in file1.iterrows():
             #print(row)
             self.assertEqual(birth_before_current_check(row), [])
-            
-
-    def testBirthBeforeCurrentDate2(self):
-        file = pd.read_csv('../Data/individuals2.csv')
-        counter = 0
-        for index, row in file.iterrows():
-            counter+=1
-            #print(row)
-            if counter == 15:
-                self.assertEqual(birth_before_current_check(row), ['ERROR: INDIVIDUAL: US01: I14: Birthday 2021-06-01 occurs in the future'])
-
-    def testBirthBeforeCurrentDate3(self):
-        file = pd.read_csv('../Data/individuals2.csv')
-        counter = 0
-        for index, row in file.iterrows():
-            counter+=1
-            #print(row)
-            if counter == 1:
-                self.assertEqual(birth_before_current_check(row), ['ERROR: INDIVIDUAL: US01: I1: Birthday 4506-11-11 occurs in the future'])
-
-    def testBirthBeforeCurrentDate4(self):
-        file = pd.read_csv('../Data/individuals2.csv')
-        counter = 0
-        for index, row in file.iterrows():
-            counter+=1
-            #print(row)
-            if counter == 5:
-                self.assertEqual(birth_before_current_check(row), ['ERROR: INDIVIDUAL: US01: I5: Birthday 2021-03-02 occurs in the future'])
-
-    def testBirthBeforeCurrentDate5(self):
-        file = pd.read_csv('../Data/individuals2.csv')
-        counter = 0
-        for index, row in file.iterrows():
-            counter+=1
-            #print(row)
-            if counter == 2:
-                self.assertEqual(birth_before_current_check(row), ['ERROR: INDIVIDUAL: US01: I2: Birthday 3044-10-15 occurs in the future'])
-
+        
 
 if __name__ == "__main__":
     #print(file.head())
