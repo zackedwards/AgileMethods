@@ -8,7 +8,7 @@ import pandas as pd
 import sys
 sys.path.insert(0, '../AgileMethods')
 
-from ged_reader import monthNumber
+from functions import monthNumber
 
 def BirthBeforeDeath(df):
     errors = []
