@@ -32,16 +32,7 @@ class Test(unittest.TestCase):
 
     def testbirth_before_marriage_check(self):
         #print(row)
-        self.assertEqual(birth_before_marriage_check(pd.read_csv('../Data/individuals.csv'), pd.read_csv('../Data/families.csv')), [])
-    def testbirth_before_marriage_check2(self):
-        self.assertEqual(birth_before_marriage_check(pd.read_csv('../Data/individuals2.csv'), pd.read_csv('../Data/families.csv')), ['ERROR: INDIVIDUAL: US02: I2: Married 1998-07-02 before born 3044-10-15'])
-    def testbirth_before_marriage_check3(self):
-        self.assertEqual(birth_before_marriage_check(pd.read_csv('../Data/individuals3.csv'), pd.read_csv('../Data/families.csv')), ['ERROR: INDIVIDUAL: US02: I2: Married 1998-07-02 before born 2021-10-10', 'ERROR: INDIVIDUAL: US02: I7: Married 1960-07-02 before born 2021-09-05', 'ERROR: INDIVIDUAL: US02: I7: Married 1950-10-09 before born 2021-09-05'])
-    def testbirth_before_marriage_check4(self):
-        self.assertEqual(birth_before_marriage_check(pd.read_csv('../Data/individuals.csv'), pd.read_csv('../Data/families3.csv')), ['ERROR: INDIVIDUAL: US02: I2: Married 1920-07-02 before born 1963-10-10', 'ERROR: INDIVIDUAL: US02: I3: Married 1920-07-02 before born 1965-08-02'])
-    def testbirth_before_marriage_check5(self):
-        self.assertEqual(birth_before_marriage_check(pd.read_csv('../Data/individuals4.csv'), pd.read_csv('../Data/families2.csv')), ['ERROR: INDIVIDUAL: US02: I2: Married 1998-07-02 before born 3044-10-15', 'ERROR: INDIVIDUAL: US02: I9: Married 1950-10-09 before born 2020-11-02', 'ERROR: INDIVIDUAL: US02: I9: Married 1979-05-02 before born 2020-11-02', 'ERROR: INDIVIDUAL: US02: I10: Married 1979-05-02 before born 1980-09-02'])
-    
+        self.assertEqual(birth_before_marriage_check(pd.read_csv('./Data/individuals.csv'), pd.read_csv('./Data/families.csv')), [])
 
 
 if __name__ == "__main__":

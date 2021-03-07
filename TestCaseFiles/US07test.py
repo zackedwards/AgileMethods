@@ -18,7 +18,7 @@ def age_less_than_150(row):
         else:
             error.append("ERROR: INDIVIDUAL: US07: {}: More than 150 years old - Birth {}".format(row['ID'], row['Birthday']))
     # Prints out errors for age less than 150: US07
-    print(error)
+    #print(error)
     return error
 
 def people_over_150(df):
@@ -50,28 +50,28 @@ class Test(unittest.TestCase):
 
     def testAgeLessThan150(self):
         for index, row in file.iterrows():
-            print(row)
+            #print(row)
             self.assertEqual(age_less_than_150(row), [])
 
     def testAgeLessThan150_2(self):
         for index, row in file.iterrows():
-            print(row)
+            #print(row)
             self.assertFalse(people_over_150(file))
 
     def testAgeLessThan150_3(self):
         for index, row in file.iterrows():
-            print(row)
+            #print(row)
             self.assertTrue(people_under_150(file))
 
     def testAgeLessThan150_4(self):
         for index, row in file.iterrows():
-            print(row)
+            #print(row)
             if row['Alive'] == 'True' and row['Age'] >= 150 :
                 self.assertEqual(age_less_than_150(row), "ERROR: INDIVIDUAL: US07: {}: More than 150 years old - Birth {}".format(row['ID'], row['Birthday']))
 
     def testAgeLessThan150_5(self):
         for index, row in file.iterrows():
-            print(row)
+            #print(row)
             if row['Alive'] == 'False' and row['Age'] >= 150 :
                 self.assertEqual(age_less_than_150(row), "ERROR: INDIVIDUAL: US07: {}: More than 150 years old at death - Birth {}: Death {}".format(row['ID'], row['Birthday'], row['Death']))
 

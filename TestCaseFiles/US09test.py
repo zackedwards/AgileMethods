@@ -7,15 +7,11 @@ import unittest
 import pandas as pd
 import datetime
 import sys
-#sys.path.insert(0, '../AgileMethods')
+sys.path.insert(0, '../AgileMethods')
 
 from ast import literal_eval
 from dateutil.relativedelta import relativedelta
-#from ged_reader import monthNumber
-
-def monthNumber(month):
-    months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']
-    return months.index(month) + 1
+from functions import monthNumber
 
 # checks if birth
 def birthBeforeParentsDeath(individuals2, row_fam):
@@ -42,15 +38,15 @@ def birthBeforeParentsDeath(individuals2, row_fam):
             nine_month = relativedelta(months=9)
             if father_death[0] and (birth_dt-nine_month) > father_death[1]:
                 errors.append("ERROR: FAMILY: US09: {}: Child {} born {} after more than nine months after father's death on {}".format(row_fam["ID"], row_indi["ID"], birth_dt.date(), father_death[1].date()))
-    print( errors)
+    #print( errors)
     return errors
 
 class Test(unittest.TestCase):
     
     def testbirthBeforeParentsDeath(self):
-        file = pd.read_csv('../Data/families.csv')
+        file = pd.read_csv('./Data/families.csv')
         for index, row_fam in file.iterrows():
-            self.assertEqual(birthBeforeParentsDeath(pd.read_csv('../Data/individuals.csv'), row_fam), [])
+            self.assertEqual(birthBeforeParentsDeath(pd.read_csv('./Data/individuals.csv'), row_fam), [])
             break
 
 if __name__ == "__main__":
