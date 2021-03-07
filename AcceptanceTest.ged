@@ -111,16 +111,22 @@
 2 DATE 9 NOV 1969
 1 FAMS @F5@
 0 @I11@ INDI
-1 NAME /Faustino/
+1 NAME Ryan /Faustino/
+2 GIVN Ryan
 2 SURN Faustino
 2 _MARNM Faustino
 1 SEX M
+1 BIRT
+2 DATE 8 AUG 1920
 1 FAMS @F2@
 0 @I12@ INDI
-1 NAME /Faustino/
+1 NAME Erica /Faustino/
+2 GIVN Erica
 2 SURN Faustino
 2 _MARNM Faustino
 1 SEX F
+1 BIRT
+2 DATE 11 AUG 1920
 1 FAMS @F2@
 0 @I13@ INDI
 1 NAME Kyle /Faustino/
