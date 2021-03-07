@@ -77,6 +77,6 @@ class Test(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    file = pd.read_csv('../individuals.csv')
-    print(file.head())
+    file = pd.read_csv('./Data/individuals.csv')
+    #print(file.head())
     unittest.main()

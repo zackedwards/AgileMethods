@@ -5,8 +5,10 @@ Created on Feb 27, 2021
 '''
 import unittest
 import pandas as pd
+import sys
+sys.path.insert(0, '../AgileMethods')
 
-from ged_reader import monthNumber
+from functions import monthNumber
 
 def BirthBeforeDeath(df):
     errors = []
@@ -30,7 +32,7 @@ class Test(unittest.TestCase):
 
 
     def testBirthBeforeDeath(self):
-        self.assertEqual(BirthBeforeDeath(pd.read_csv('individuals.csv')), [])
+        self.assertEqual(BirthBeforeDeath(pd.read_csv('./Data/individuals.csv')), [])
 
 
 if __name__ == "__main__":
