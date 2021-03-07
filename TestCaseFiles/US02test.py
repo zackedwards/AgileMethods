@@ -10,7 +10,7 @@ import sys
 sys.path.insert(0, '../AgileMethods')
 
 from ast import literal_eval
-from ged_reader import monthNumber
+from functions import monthNumber
     
 # checks if birth happened before marriage. if not, error message prints
 def birth_before_marriage_check(individuals2, families2):
