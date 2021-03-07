@@ -54,10 +54,13 @@
 2 DATE 9 SEP 2001
 1 FAMC @F1@
 0 @I5@ INDI
-1 NAME /Ajero/
+1 NAME Ryan /Ajero/
+2 GIVN Ryan
 2 SURN Ajero
 2 _MARNM Ajero
 1 SEX M
+1 BIRT
+2 DATE 9 NOV 1920
 1 FAMS @F3@
 0 @I6@ INDI
 1 NAME Erica /Lee/
