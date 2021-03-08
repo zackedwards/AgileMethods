@@ -1,4 +1,5 @@
 #Author: Zack Edwards, Valentina Bustamante, William Escamilla, Dana Faustino
+from numpy import NaN
 import pandas as pd
 import datetime
 from functions import monthNumber
@@ -66,8 +67,11 @@ def main():
                 individuals = individuals.append(row, ignore_index=True)
                 row = {}  # reset the row
                 individuals = individuals.set_index('ID')  # set index to ID
-            elif row != {} and 'Children' in row.keys():  # if row is not blank
-                row["Children"] = str(row['Children']) + '}'  # add final child
+            elif row != {}:  # if row is not blank
+                if "Children" in row.keys():
+                    row["Children"] = str(row['Children']) + '}'  # add final child
+                else:
+                    row["Children"] = NaN
                 families = families.append(row, ignore_index=True)  # append row to database
                 row = {}
             row = {'ID': words[1][1:-1]}
@@ -112,13 +116,16 @@ def main():
             elif divFlag == True:
                 row["Divorced"] = words[2:]
                 divFlag = False
-    #row["Children"] = str(row["Children"]) + '}' #add final child for final row of families
+    if "Children" in row.keys():
+        row["Children"] = str(row["Children"]) + '}' #add final child for final row of families
+    else:
+        row["Children"] = NaN
     families = families.append(row, ignore_index=True)
     #print and send to csv
     individuals.to_csv('./Data/individuals.csv')
     families.to_csv('./Data/families.csv')
-    print(individuals.head(10))
-    print(families.head(10))
+    print(individuals.head(15))
+    print(families.head(15))
     file.close()
 
 #part 2: print identifiers and names

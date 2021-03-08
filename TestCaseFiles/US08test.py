@@ -19,7 +19,7 @@ def birth_before_parent_marriage(fam_row, indi_df):
         children_list = fam_row['Children']
         for index, row in indi_df.iterrows():
         #try:
-            if row['ID'] in children_list:
+            if type(children_list) != float and row['ID'] in children_list:
                 birth = literal_eval(row['Birthday'])
                 birth_dt = datetime.datetime(int(birth[2]), monthNumber(birth[1]), int(birth[0]))
                 if birth_dt < marriage_dt:
