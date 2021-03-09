@@ -2,13 +2,13 @@
 1 SOUR Family Echo
 2 WWW http://www.familyecho.com/
 1 FILE Family 2
-1 DATE 7 MAR 2021
+1 DATE 8 MAR 2021
 1 DEST ANSTFILE
 1 GEDC
 2 VERS 5.5.1
 2 FORM LINEAGE-LINKED
 1 SUBM @I1@
-2 NAME A
+2 NAME Will Escamilla
 1 SUBN
 1 CHAR UTF-8
 0 @I1@ INDI
@@ -222,6 +222,60 @@
 1 DEAT Y
 2 DATE 4 OCT 1999
 1 FAMS @F9@
+0 @I22@ INDI
+1 NAME Will /Faustino/
+2 GIVN Will
+2 SURN Faustino
+2 _MARNM Faustino
+1 SEX M
+1 BIRT
+2 DATE 9 FEB 1999
+1 FAMC @F6@
+0 @I23@ INDI
+1 NAME Zack /Faustino/
+2 GIVN Zack
+2 SURN Faustino
+2 _MARNM Faustino
+1 SEX M
+1 BIRT
+2 DATE 9 FEB 1999
+1 FAMC @F6@
+0 @I24@ INDI
+1 NAME Yan /Faustino/
+2 GIVN Yan
+2 SURN Faustino
+2 _MARNM Faustino
+1 SEX M
+1 BIRT
+2 DATE 9 FEB 1999
+1 FAMC @F6@
+0 @I25@ INDI
+1 NAME Matt /Faustino/
+2 GIVN Matt
+2 SURN Faustino
+2 _MARNM Faustino
+1 SEX M
+1 BIRT
+2 DATE 9 FEB 1999
+1 FAMC @F6@
+0 @I26@ INDI
+1 NAME Gary /Faustino/
+2 GIVN Gary
+2 SURN Faustino
+2 _MARNM Faustino
+1 SEX M
+1 BIRT
+2 DATE 9 FEB 1999
+1 FAMC @F6@
+0 @I27@ INDI
+1 NAME Austin /Faustino/
+2 GIVN Austin
+2 SURN Faustino
+2 _MARNM Faustino
+1 SEX M
+1 BIRT
+2 DATE 9 FEB 1999
+1 FAMC @F6@
 0 @F1@ FAM
 1 HUSB @I2@
 1 WIFE @I3@
@@ -266,6 +320,12 @@
 0 @F6@ FAM
 1 HUSB @I13@
 1 WIFE @I14@
+1 CHIL @I22@
+1 CHIL @I23@
+1 CHIL @I24@
+1 CHIL @I25@
+1 CHIL @I26@
+1 CHIL @I27@
 1 MARR
 2 DATE 12 OCT 2005
 2 PLAC New Jersey
