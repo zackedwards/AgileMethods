@@ -19,4 +19,10 @@ I17,"['Rachel', '/Balleras/']",F,"['13', 'SEP', '1940']",80,True,,,F7
 I18,"['Henry', '/Ajero/']",M,"['9', 'SEP', '1950']",70,True,,F3,F8
 I19,"['Cary', '/Ajero/']",F,"['8', 'AUG', '1950']",70,True,,,F8
 I20,"['Ray', '/Faustino/']",M,"['4', 'SEP', '1950']",39,False,"['4', 'AUG', '1990']",F2,F9
-I21,"['Emma', '/Faustino/']",F,"['5', 'AUG', '1960']",,,"['4', 'OCT', '1999']",,F9
+I21,"['Emma', '/Faustino/']",F,"['5', 'AUG', '1960']",39,False,"['4', 'OCT', '1999']",,F9
+I22,"['Will', '/Faustino/']",M,"['9', 'FEB', '1999']",22,True,,F6,
+I23,"['Zack', '/Faustino/']",M,"['9', 'FEB', '1999']",22,True,,F6,
+I24,"['Yan', '/Faustino/']",M,"['9', 'FEB', '1999']",22,True,,F6,
+I25,"['Matt', '/Faustino/']",M,"['9', 'FEB', '1999']",22,True,,F6,
+I26,"['Gary', '/Faustino/']",M,"['9', 'FEB', '1999']",22,True,,F6,
+I27,"['Austin', '/Faustino/']",M,"['9', 'FEB', '1999']",,,,F6,
