@@ -5,7 +5,7 @@ import datetime
 from functions import monthNumber
 #print('Please enter the path file for your GEDCOM file (.ged)')
 #This is the local path file for my gedcom file
-#path = r'C:\Users\Zack Edwards\OneDrive - stevens.edu\Semester 6\555\AgileMethods\milestone3\FamilyTree.ged'
+#path = r'FamilyTree.ged'
 #path = input("")
 #open the file
 def main():

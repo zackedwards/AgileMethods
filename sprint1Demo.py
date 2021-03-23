@@ -18,7 +18,6 @@ errors = birth_before_marriage_check(individuals, families)
 
 for index, indiRow in individuals.iterrows():
     errors += birth_before_current_check(indiRow)
-    errors += BirthBeforeDeath(indiRow)
     errors += age_less_than_150(indiRow)
 
 for index, famRow in families.iterrows():
@@ -26,6 +25,8 @@ for index, famRow in families.iterrows():
     errors += marriage_before_death_check(famRow, individuals)
     errors += divorce_before_death_check(famRow, individuals)
     errors += birth_before_parent_marriage(famRow, individuals)
+
+errors += BirthBeforeDeath(individuals)
 
 TestResults = open("sprint1TestResults.txt", "w")
 terminalOutput = ""
