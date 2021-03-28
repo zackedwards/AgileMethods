@@ -11,7 +11,7 @@ def LessThan15Siblings(fam_df):
 
     for index, row in fam_df.iterrows():
     #try:
-        if isinstance(row['Children'], str):
+        if isinstance(row['Children'], str):        #may be a list
             if (len(row['Children']) >= 15) :
                 errors.append("ERROR: FAMILY: US15: {}: Family {} has 15 or more siblings".format(row["ID"]))
 
