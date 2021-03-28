@@ -18,7 +18,7 @@ from dateutil.relativedelta import relativedelta
 from functions import monthNumber, convertStringToDatetime
 
 # compare children birth dates to parents' death dates
-def birthBeforeParentsDeath2(individuals2, fam, mother_death, father_death, children):
+def birth_before_parents_death(individuals2, fam, mother_death, father_death, children):
     errors = []
     for index, row_indi in individuals2.iterrows():
         if row_indi["ID"] in children:
@@ -32,7 +32,7 @@ def birthBeforeParentsDeath2(individuals2, fam, mother_death, father_death, chil
 
 # collect mother and father death dates
 # collect children ids
-def birthBeforeParentsDeath(individuals2, row_fam):
+def get_parents_death(individuals2, row_fam):
     children = row_fam["Children"]
     mother_death = [False, None]
     father_death = [False, None]
@@ -44,22 +44,22 @@ def birthBeforeParentsDeath(individuals2, row_fam):
                     mother_death = [True, death_dt]
                 else:
                     father_death = [True, death_dt] 
-    return birthBeforeParentsDeath2(individuals2, row_fam["ID"], mother_death, father_death, row_fam["Children"])
+    return birth_before_parents_death(individuals2, row_fam["ID"], mother_death, father_death, row_fam["Children"])
  
 
 class Test(unittest.TestCase):
     
     def testbirthBeforeParentsDeath(self):
-        file = pd.read_csv('./Data/families.csv')
+        file = pd.read_csv('../Data/families.csv')
         for index, row_fam in file.iterrows():
-            self.assertEqual(birthBeforeParentsDeath(pd.read_csv('./Data/individuals.csv'), row_fam), ["ERROR: FAMILY: US09: F1: Child I1 born 2001-10-04 after more than nine months after father's death on 2000-10-10", "ERROR: FAMILY: US09: F1: Child I4 born 2003-02-12 after more than nine months after father's death on 2000-10-10"])
+            self.assertEqual(get_parents_death(pd.read_csv('../Data/individuals.csv'), row_fam), ["ERROR: FAMILY: US09: F1: Child I1 born 2001-10-04 after more than nine months after father's death on 2000-10-10", "ERROR: FAMILY: US09: F1: Child I4 born 2003-02-12 after more than nine months after father's death on 2000-10-10"])
             break
     
     def testbirthBeforeParentsDeath2(self):
-        file = pd.read_csv('./Data/families.csv')
+        file = pd.read_csv('../Data/families.csv')
         for index, row_fam in file.iterrows():
             if index == 1:
-                self.assertEqual(birthBeforeParentsDeath(pd.read_csv('./Data/individuals.csv'), row_fam), [])
+                self.assertEqual(get_parents_death(pd.read_csv('../Data/individuals.csv'), row_fam), [])
                 break
 
 if __name__ == "__main__":

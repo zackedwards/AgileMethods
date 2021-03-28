@@ -17,7 +17,7 @@ from ast import literal_eval
 from functions import monthNumber, convertStringToDatetime
 
 #get marriage date and both ages of the people married
-def marriageAfterFourteen(individuals2, families2):
+def marriage_after_fourteen(individuals2, families2):
     errors = []
     for index, row_indi in individuals2.iterrows():
         for index, row_fam in families2.iterrows():
@@ -37,7 +37,7 @@ class Test(unittest.TestCase):
 
 
     def testMarriageAfterFourteen(self):
-        self.assertEqual(marriageAfterFourteen(pd.read_csv('./Data/individuals.csv'), pd.read_csv('./Data/families.csv')), [])
+        self.assertEqual(marriage_after_fourteen(pd.read_csv('./Data/individuals.csv'), pd.read_csv('./Data/families.csv')), [])
 
 if __name__ == "__main__":
     unittest.main()
