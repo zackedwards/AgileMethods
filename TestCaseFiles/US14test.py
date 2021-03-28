@@ -35,7 +35,7 @@ class Test(unittest.TestCase):
 
     def testbirth_before_marriage_check(self):
         #print(row)
-        self.assertEqual(no_more_than_5_kids_check(pd.read_csv('./Data/individuals.csv'), pd.read_csv('./Data/families.csv')), ['ERROR: FAMILY: US14: F6: More than 5 children born at the same time (Within 2 days of eachother)'])
+        self.assertEqual(no_more_than_5_kids_check(pd.read_csv('./Data/individuals.csv'), pd.read_csv('./Data/families.csv')), [])
 
 
 if __name__ == "__main__":

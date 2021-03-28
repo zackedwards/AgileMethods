@@ -62,7 +62,7 @@ class Test(unittest.TestCase):
 
     def testNoBigamyAll(self):
         file = pd.read_csv('./Data/families.csv')
-        print(NoBigamy(file))
+        #print(NoBigamy(file))
         self.assertEqual(NoBigamy(file), '')
 
     def testNoBigamy5(self):
@@ -70,7 +70,7 @@ class Test(unittest.TestCase):
         test=pd.DataFrame(columns=['ID','Married','Divorced','Husband ID','Wife ID'])
         test = test.append({'ID': 'Test', 'Married': "['11','DEC','1999']",'Divorced': "['10','NOV','2003']",'Husband ID':'I2','Wife ID': 'I3'}, ignore_index=True)
         test = test.append({'ID': 'Test', 'Married': "['14','JAN','2000']",'Divorced': "['10','NOV','2009']",'Husband ID':'I2','Wife ID': 'I4'}, ignore_index=True)
-        print(NoBigamy(test))
+        #print(NoBigamy(test))
         self.assertEqual(NoBigamy(test), expected_err)
 
 
