@@ -23,7 +23,7 @@ def NoBigamy(dataframe):
         if isinstance(row['Married'], str):
             married = literal_eval(row['Married'])
             married_datetime1 = datetime.datetime(int(married[2]), monthNumber(married[1]), int(married[0]))
-            for index, row2 in dataframe.iterrows():
+            for index2, row2 in dataframe.iterrows():
                 if row2.all() == row.all(): #dont compare row to itself
                     continue
                 if wife_id == row2['Wife ID']:
