@@ -14,7 +14,7 @@ from ast import literal_eval
 
 
 def MarriageBeforeDivorce(row):
-    msg = ''
+    msg = []
     if isinstance(row['Married'], str) and isinstance(row['Divorced'], str):
         married = literal_eval(row['Married'])
         divorce = literal_eval(row['Divorced'])
@@ -22,13 +22,10 @@ def MarriageBeforeDivorce(row):
         divorce_datetime = datetime.datetime(int(divorce[2]), monthNumber(divorce[1]), int(divorce[0]))
 
         if married_datetime > divorce_datetime:
-            msg = ('ERROR: INDIVIDUAL: US03: ' + str(row['ID']) + ': Divorced: ' + str(divorce) +
-                   ' occurs before married: ' + str(married))
-    if msg != '':
-        print(msg)
-        return False
-    else:
-        return True
+            msg.append('ERROR: FAMILY: US04: ' + str(row['ID']) + ': Divorced: ' + str(divorce) +
+                   ' occurs before Marriage: ' + str(married))
+    return msg
+    
 
 
 class Test(unittest.TestCase):
@@ -36,29 +33,29 @@ class Test(unittest.TestCase):
     def testMarriageBeforeDivorceAll(self):
         file = pd.read_csv('./Data/families.csv')
         for index, row in file.iterrows():
-            self.assertEqual(MarriageBeforeDivorce(row), True)
+            self.assertEqual(MarriageBeforeDivorce(row), [])
 
     def testMarriageBeforeDivorce1(self):
         file = pd.read_csv('./Data/families.csv')
-        self.assertEqual(MarriageBeforeDivorce(file.iloc[2]), True)
+        self.assertEqual(MarriageBeforeDivorce(file.iloc[2]), [])
 
     def testMarriageBeforeDivorce2(self):
         file = pd.read_csv('./Data/families.csv')
-        self.assertEqual(MarriageBeforeDivorce(file.iloc[3]), True)
+        self.assertEqual(MarriageBeforeDivorce(file.iloc[3]), [])
 
     def testMarriageBeforeDivorce3(self):
         file = pd.read_csv('./Data/families.csv')
-        self.assertEqual(MarriageBeforeDivorce(file.iloc[1]), True)
+        self.assertEqual(MarriageBeforeDivorce(file.iloc[1]), [])
 
     def testMarriageBeforeDivorce4(self):
         file = pd.read_csv('./Data/families.csv')
-        self.assertEqual(MarriageBeforeDivorce(file.iloc[5]), True)
+        self.assertEqual(MarriageBeforeDivorce(file.iloc[5]), [])
 
     def testMarriageBeforeDivorce5(self):
-        expected_err = ["ERROR: FAMILY: US03: Test: Divorced: ['10','NOV','1998'] "
-                        "occurs before Marriage: ['11','DEC','1999']"]
+        expected_err = ["ERROR: FAMILY: US04: Test: Divorced: ['10', 'NOV', '1998'] "
+                        "occurs before Marriage: ['11', 'DEC', '1999']"]
         self.assertEqual(MarriageBeforeDivorce({'ID': 'Test', 'Married': "['11','DEC','1999']",
-                                           'Divorced': "['10','NOV','1998']"}), False)
+                                           'Divorced': "['10','NOV','1998']"}), expected_err)
 
 
 if __name__ == "__main__":
