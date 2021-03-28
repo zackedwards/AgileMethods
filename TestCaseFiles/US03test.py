@@ -6,25 +6,21 @@ Created on Feb 27, 2021
 import sys
 import unittest #testing library
 import pandas as pd #data frame library
-import datetime
 sys.path.insert(0, '../AgileMethods')
 
-from functions import monthNumber #converts word to number for months
-from ast import literal_eval #converts string to list
+from functions import convertStringToDatetime #converts word to number for months
 
 
 def BirthBeforeDeath(individualsDF):
     msg = [] #empty list, this is where error messages will go
     for index, row in individualsDF.iterrows(): #checking each individual in the family tree
         if row['Alive'] == False: #only if the individual is dead
-            birth = literal_eval(row['Birthday'])
-            death = literal_eval(row['Death'])
-            birth_datetime = datetime.datetime(int(birth[2]), monthNumber(birth[1]), int(birth[0]))
-            death_datetime = datetime.datetime(int(death[2]), monthNumber(death[1]), int(death[0]))
+            birth_datetime = convertStringToDatetime(row['Birthday'])
+            death_datetime = convertStringToDatetime(row['Death'])
             #The rows above isolate the birth and death
             if birth_datetime > death_datetime: #if the birth is after the death
-                msg.append('ERROR: INDIVIDUAL: US03: ' + str(row['ID']) + ' Died: ' + str(death) +
-                    ' occurs before Birth: ' + str(birth))
+                msg.append('ERROR: INDIVIDUAL: US03: ' + str(row['ID']) + ' Died: ' + str(death_datetime.date()) +
+                    ' occurs before Birth: ' + str(birth_datetime.date()))
                 #append the error message
     return msg
 
