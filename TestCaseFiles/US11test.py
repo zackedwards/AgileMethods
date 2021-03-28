@@ -6,24 +6,20 @@ Created on Feb 27, 2021
 import sys
 import unittest
 import pandas as pd
-import datetime
 sys.path.insert(0, '../AgileMethods')
 
-from ged_reader import monthNumber
-from ast import literal_eval
+from functions import convertStringToDatetime
 
 
 def NoBigamy(row):
     msg = ''
     if isinstance(row['Married'], str) and isinstance(row['Divorced'], str):
-        married = literal_eval(row['Married'])
-        divorce = literal_eval(row['Divorced'])
-        married_datetime = datetime.datetime(int(married[2]), monthNumber(married[1]), int(married[0]))
-        divorce_datetime = datetime.datetime(int(divorce[2]), monthNumber(divorce[1]), int(divorce[0]))
+        married_datetime = convertStringToDatetime(row['Married'])
+        divorce_datetime = convertStringToDatetime(row['Divorced'])
 
         if married_datetime > divorce_datetime:
-            msg = ('ERROR: INDIVIDUAL: US03: ' + str(row['ID']) + ': Divorced: ' + str(divorce) +
-                   ' occurs before married: ' + str(married))
+            msg = ('ERROR: INDIVIDUAL: US03: ' + str(row['ID']) + ': Divorced: ' + str(divorce_datetime.date()) +
+                   ' occurs before married: ' + str(married_datetime.date()))
     if msg != '':
         print(msg)
         return False

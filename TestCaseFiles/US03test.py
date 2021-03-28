@@ -6,11 +6,9 @@ Created on Feb 27, 2021
 import sys
 import unittest #testing library
 import pandas as pd #data frame library
-import datetime
 sys.path.insert(0, '../AgileMethods')
 
-from functions import monthNumber, convertStringToDatetime #converts word to number for months
-from ast import literal_eval #converts string to list
+from functions import convertStringToDatetime #converts word to number for months
 
 
 def BirthBeforeDeath(individualsDF):

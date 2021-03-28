@@ -5,12 +5,10 @@ Created on Feb 28, 2021
 '''
 import unittest
 import pandas as pd
-import datetime
 import sys
 sys.path.insert(0, '../AgileMethods')
 
-from ast import literal_eval
-from functions import monthNumber, convertStringToDatetime
+from functions import convertStringToDatetime
     
 # Makes sure marriage happened before death of either spouse. If not, error thrown
 def marriage_before_death_check(famRow, individualsDF):

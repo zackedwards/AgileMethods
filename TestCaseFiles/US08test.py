@@ -4,24 +4,20 @@ Created on Mar 4, 2021
 '''
 import unittest
 import pandas as pd
-import datetime
 import sys
 sys.path.insert(0, '../AgileMethods')
 
-from ast import literal_eval
-from functions import monthNumber
+from functions import convertStringToDatetime
 
 def birth_before_parent_marriage(fam_row, indi_df):
     errors = []
     if isinstance(fam_row["Married"], str):
-        marriage = literal_eval(fam_row['Married'])
-        marriage_dt = datetime.datetime(int(marriage[2]), monthNumber(marriage[1]), int(marriage[0]))
+        marriage_dt = convertStringToDatetime(fam_row['Married'])
         children_list = fam_row['Children']
         for index, row in indi_df.iterrows():
         #try:
             if type(children_list) != float and row['ID'] in children_list:
-                birth = literal_eval(row['Birthday'])
-                birth_dt = datetime.datetime(int(birth[2]), monthNumber(birth[1]), int(birth[0]))
+                birth_dt = convertStringToDatetime(row['Birthday'])
                 if birth_dt < marriage_dt:
                     errors.append("ANOMOLY: FAMILY: US08: {}: Child {} born {} before marriage on {}".format(fam_row['ID'], row['ID'], birth_dt.date(), marriage_dt.date()))
 

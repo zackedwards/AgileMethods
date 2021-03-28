@@ -9,7 +9,6 @@ import datetime
 import sys
 sys.path.insert(0, '../AgileMethods')
 
-from ast import literal_eval
 from functions import monthNumber, convertStringToDatetime
 
 # checks if birth happened before the current date. if not, error message prints

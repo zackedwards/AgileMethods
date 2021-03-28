@@ -6,11 +6,9 @@ Created on Feb 27, 2021
 import sys
 import unittest
 import pandas as pd
-import datetime
 sys.path.insert(0, '../AgileMethods')
 
-from functions import monthNumber, convertStringToDatetime
-from ast import literal_eval
+from functions import convertStringToDatetime
 
 
 def MarriageBeforeDivorce(row):

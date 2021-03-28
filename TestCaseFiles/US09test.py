@@ -9,13 +9,11 @@ before death of mother and before
 '''
 import unittest
 import pandas as pd
-import datetime
 import sys
 sys.path.insert(0, '../AgileMethods')
 
-from ast import literal_eval
 from dateutil.relativedelta import relativedelta
-from functions import monthNumber, convertStringToDatetime
+from functions import convertStringToDatetime
 
 # compare children birth dates to parents' death dates
 def birth_before_parents_death(individuals2, fam, mother_death, father_death, children):
