@@ -38,3 +38,9 @@ Families   Unnamed: 0  ID                Married               Divorced Husband 
 7           7  F8   ['4', 'JUL', '2000']   ['9', 'SEP', '1990']        I18       ['Henry', '/Ajero/']     I19       ['Cary', '/Ajero/']                                         NaN
 8           8  F9  ['10', 'NOV', '2000']   ['6', 'NOV', '2001']        I20      ['Ray', '/Faustino/']     I21    ['Emma', '/Faustino/']                                         NaN
 
+ERROR: INDIVIDUAL: US10: I8: Married 2020-09-12 before age 14
+ERROR: INDIVIDUAL: US10: I16: Married 1925-08-08 before age 14
+ERROR: INDIVIDUAL: US10: I17: Married 1925-08-08 before age 14
+ERROR: FAMILY: US14: F6: More than 5 children born at the same time (Within 2 days of eachother)
+ERROR: FAMILY: US09: F1: Child I1 born 2001-10-04 after more than nine months after father's death on 2000-10-10
+ERROR: FAMILY: US09: F1: Child I4 born 2003-02-12 after more than nine months after father's death on 2000-10-10

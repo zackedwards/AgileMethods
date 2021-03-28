@@ -8,7 +8,7 @@ from US10test import marriage_after_fourteen #Takes in individualsDF & famRow
 #from US12test import  
 #from US13test import  
 from US14test import no_more_than_5_kids_check #Takes in individualsDF & familiesDF
-#from US15test import  
+#from US15test import LessThan15Siblings #Takes in familiesDF
 from US16test import MaleLastNames #Takes in a famRow & individualsDF
 
 individuals = pd.read_csv('./Data/individuals.csv')
@@ -16,6 +16,8 @@ families = pd.read_csv('./Data/families.csv')
 
 errors = marriage_after_fourteen(individuals, families)
 errors += no_more_than_5_kids_check(individuals, families)
+#errors += LessThan15Siblings(families)
+
 
 for index, indiRow in individuals.iterrows():
     #errors += NoBigamy(indiRow)
@@ -23,7 +25,7 @@ for index, indiRow in individuals.iterrows():
 
 for index, famRow in families.iterrows():
     errors += MaleLastNames(famRow, individuals)
-    errors = get_parents_death(individuals, famRow)
+    errors += get_parents_death(individuals, famRow)
 
 TestResults = open("sprint2TestResults.txt", "w")
 terminalOutput = ""
