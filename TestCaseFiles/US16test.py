@@ -16,7 +16,7 @@ def MaleLastNames(fam_row, indi_df):
         if isinstance(children_list, str):          #may be a list
             if row['Gender'] == 'M' and row['ID'] in children_list:
                 if row['Name'][1] != husband_last_name:
-                    errors.append("ERROR: FAMILY: US16: {}: Child {} does not have father's last name".format(fam_row["ID"], row['ID']))
+                    errors.append("ANOMOLY: FAMILY: US16: {}: Child {} does not have father's last name".format(fam_row["ID"], row['ID']))
 
     #print(errors)
     return errors
