@@ -5,12 +5,10 @@ Created on Feb 28, 2021
 '''
 import unittest
 import pandas as pd
-import datetime
 import sys
 sys.path.insert(0, '../AgileMethods')
 
-from ast import literal_eval
-from functions import monthNumber, convertStringToDatetime
+from functions import convertStringToDatetime
  
 # checks if birth happened before marriage. if not, error message prints
 def birth_before_marriage_check(individuals2, families2):

@@ -6,11 +6,9 @@ Created on Feb 27, 2021
 import sys
 import unittest
 import pandas as pd
-import datetime
 sys.path.insert(0, '../AgileMethods')
 
-from functions import monthNumber
-from ast import literal_eval
+from functions import convertStringToDatetime
 
 
 def NoBigamy(dataframe):
@@ -21,24 +19,20 @@ def NoBigamy(dataframe):
         if isinstance(row['Wife ID'], str):
             wife_id = row['Wife ID'] #save wife id
         if isinstance(row['Married'], str):
-            married = literal_eval(row['Married'])
-            married_datetime1 = datetime.datetime(int(married[2]), monthNumber(married[1]), int(married[0]))
+            married_datetime1 = convertStringToDatetime(row['Married'])
             for index2, row2 in dataframe.iterrows():
                 if row2.all() == row.all(): #dont compare row to itself
                     continue
                 if wife_id == row2['Wife ID']:
                     if isinstance(row2['Married'], str): #get second marriage date
-                        married = literal_eval(row2['Married'])
-                        married_datetime2 = datetime.datetime(int(married[2]), monthNumber(married[1]), int(married[0]))
+                        married_datetime2 = convertStringToDatetime(row2['Married'])
                         if isinstance(row['Divorced'], str): #different case if family is divorced or not
-                            divorce = literal_eval(row['Divorced']) #save divorce date
-                            divorce_datetime1 = datetime.datetime(int(divorce[2]), monthNumber(divorce[1]), int(divorce[0]))
+                            divorce_datetime1 = convertStringToDatetime(row['Divorced']) #save divorce date
                             if married_datetime2 > married_datetime1 and married_datetime2 < divorce_datetime1: 
                                 msg+=('ERROR: FAMILY: US11: ' + str(row['ID']) + ': '+wife_id+' married to both ' + hus_id +
                                             ' and ' + str(row2['Husband ID'])+' at the same time')
                         elif isinstance(row2['Divorced'], str):
-                            divorce = literal_eval(row2['Divorced']) #save divorce date
-                            divorce_datetime2 = datetime.datetime(int(divorce[2]), monthNumber(divorce[1]), int(divorce[0]))
+                            divorce_datetime2 = convertStringToDatetime(row2['Divorced']) #save divorce date
                             if married_datetime1 > married_datetime2 and married_datetime1 < divorce_datetime2: 
                                 msg+=('ERROR: FAMILY: US11: ' + str(row['ID']) + ': '+wife_id+' married to both ' + hus_id +
                                             ' and ' + str(row2['Husband ID'])+' at the same time')
@@ -47,17 +41,14 @@ def NoBigamy(dataframe):
                                             ' and ' + str(row2['Husband ID'])+' at the same time')
                 if hus_id == row2['Husband ID']:
                     if isinstance(row2['Married'], str): #get second marriage date
-                        married = literal_eval(row2['Married'])
-                        married_datetime2 = datetime.datetime(int(married[2]), monthNumber(married[1]), int(married[0]))
+                        married_datetime2 = convertStringToDatetime(row2['Married'])
                         if isinstance(row['Divorced'], str): #different case if family is divorced or not
-                            divorce = literal_eval(row['Divorced']) #save divorce date
-                            divorce_datetime1 = datetime.datetime(int(divorce[2]), monthNumber(divorce[1]), int(divorce[0]))
+                            divorce_datetime1 = convertStringToDatetime(row['Divorced']) #save divorce date
                             if married_datetime2 > married_datetime1 and married_datetime2 < divorce_datetime1:
                                 msg+=('ERROR: FAMILY: US11: ' + str(row['ID']) + ': '+hus_id+' married to both ' + wife_id +
                                         ' and ' + str(row2['Wife ID'])+' at the same time')
                         elif isinstance(row2['Divorced'], str):
-                            divorce = literal_eval(row2['Divorced']) #save divorce date
-                            divorce_datetime2 = datetime.datetime(int(divorce[2]), monthNumber(divorce[1]), int(divorce[0]))
+                            divorce_datetime2 = convertStringToDatetime(row2['Divorced']) #save divorce date
                             if married_datetime1 > married_datetime2 and married_datetime1 < divorce_datetime2: 
                                 msg+=('ERROR: FAMILY: US11: ' + str(row['ID']) + ': '+ hus_id+' married to both ' + wife_id +
                                         ' and ' + str(row2['Wife ID'])+' at the same time')

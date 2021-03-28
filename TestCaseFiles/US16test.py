@@ -13,7 +13,7 @@ def MaleLastNames(fam_row, indi_df):
 
     for index, row in indi_df.iterrows():
     #try:
-        if row['Gender'] == 'M' and row['ID'] in children_list:
+        if not isinstance(children_list ,float) and row['Gender'] == 'M' and row['ID'] in children_list:
             if row['Name'][1] != husband_last_name:
                 errors.append("ERROR: FAMILY: US16: {}: Child {} does not have father's last name".format(fam_row["ID"], row['ID']))
 

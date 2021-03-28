@@ -9,12 +9,10 @@ Descripion: Marriage should be at least
 '''
 import unittest
 import pandas as pd
-import datetime
 import sys
 sys.path.insert(0, '../AgileMethods')
 
-from ast import literal_eval
-from functions import monthNumber, convertStringToDatetime
+from functions import convertStringToDatetime
 
 #get marriage date and both ages of the people married
 def marriage_after_fourteen(individuals2, families2):

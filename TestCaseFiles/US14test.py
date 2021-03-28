@@ -5,13 +5,11 @@ Created on March 8, 2021
 '''
 import unittest
 import pandas as pd
-import datetime
 import sys
 sys.path.insert(0, '../AgileMethods')
 
-from numpy import NaN
 from ast import literal_eval
-from functions import monthNumber
+from functions import convertStringToDatetime
  
 # checks if birth happened before marriage. if not, error message prints
 def no_more_than_5_kids_check(individualsDF, familiesDF):
@@ -21,8 +19,8 @@ def no_more_than_5_kids_check(individualsDF, familiesDF):
         if isinstance(famRow["Children"], str) and len(literal_eval(famRow["Children"])) > 5: # Needs to be greater than 5
             birthList=[]
             for childId in literal_eval(famRow['Children']):
-                childBday=literal_eval(individualsDF.iloc[int(childId[1:])-1]["Birthday"])
-                birthList.append(datetime.datetime(int(childBday[2]), monthNumber(childBday[1]), int(childBday[0])))
+                childBday_dt = convertStringToDatetime(literal_eval(individualsDF.iloc[int(childId[1:])-1]["Birthday"]))
+                birthList.append(childBday_dt)
             for birth in birthList:
                 for birth2 in birthList[(birthList.index(birth)+1):]:
                     if abs((birth-birth2).days) < 2:
