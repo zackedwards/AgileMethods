@@ -29,7 +29,7 @@ def divorce_before_death_check(famRow, individualsDF):
 
             # Finally checks if divorce occured after the husband died, if so, append an error
             if divorced_dt > husbandDeath_dt:
-                errors.append("ERROR: INDIVIDUAL: US05: {}: Death {} before Divorced {}".format(famRow["Husband ID"], husbandDeath_dt.date(), divorced_dt.date()))
+                errors.append("ERROR: INDIVIDUAL: US06: {}: Death {} before Divorced {}".format(famRow["Husband ID"], husbandDeath_dt.date(), divorced_dt.date()))
         
         # Checks if the wife in the family is dead, if so, proceed
         if individualsDF.iloc[int(famRow["Wife ID"][1:])-1]["Alive"] == False:
@@ -39,7 +39,7 @@ def divorce_before_death_check(famRow, individualsDF):
 
             # Finally checks if divorce occured after the wife died, if so, append an error
             if divorced_dt > wifeDeath_dt:
-                errors.append("ERROR: INDIVIDUAL: US05: {}: Death {} before Divorced {}".format(famRow["Wife ID"], wifeDeath_dt.date(), divorced_dt.date()))
+                errors.append("ERROR: INDIVIDUAL: US06: {}: Death {} before Divorced {}".format(famRow["Wife ID"], wifeDeath_dt.date(), divorced_dt.date()))
 
     return errors
 

@@ -1,10 +1,11 @@
 #Author: Zack Edwards, Valentina Bustamante, William Escamilla, Dana Faustino
+from numpy import NaN
 import pandas as pd
 import datetime
 from functions import monthNumber
 #print('Please enter the path file for your GEDCOM file (.ged)')
 #This is the local path file for my gedcom file
-#path = r'C:\Users\Zack Edwards\OneDrive - stevens.edu\Semester 6\555\AgileMethods\milestone3\FamilyTree.ged'
+#path = r'FamilyTree.ged'
 #path = input("")
 #open the file
 def main():
@@ -43,8 +44,9 @@ def main():
                             age -= 1
                     row['Age'] = age
                     row['Alive'] = 'False'
-                else:
+                elif 'Birthday' in row.keys():
                     #calculate age if alive
+                    #print(row)
                     yearDiff = int(currDate.year) - int(row['Birthday'][-1])
                     monthDiff = currDate.month - int(monthNumber(row['Birthday'][-2]))
                     dayDiff = int(currDate.day) - int(row['Birthday'][-3])
@@ -66,7 +68,8 @@ def main():
                 row = {}  # reset the row
                 individuals = individuals.set_index('ID')  # set index to ID
             elif row != {}:  # if row is not blank
-                row["Children"] = str(row['Children']) + '}'  # add final child
+                if "Children" not in row.keys():
+                    row["Children"] = NaN
                 families = families.append(row, ignore_index=True)  # append row to database
                 row = {}
             row = {'ID': words[1][1:-1]}
@@ -96,9 +99,10 @@ def main():
                 row['Wife Name'] = individuals.loc[row["Wife ID"]]["Name"]
             elif "CHIL" in words:
                 if "Children" in row.keys():
-                    row["Children"] = str(row["Children"]) + ', ' + str((words[-1][1:-1])) #mid kid list
+                    row["Children"].append(words[-1][1:-1]) #mid kid list
                 else:
-                    row["Children"] = '{' + words[-1][1:-1] #start kid list
+                    row['Children'] = []
+                    row["Children"].append(words[-1][1:-1]) #start kid list
             elif deathFlag == True: #fulfilling the deathFlag
                 row["Death"] = words[2:]
                 deathFlag = False
@@ -111,13 +115,12 @@ def main():
             elif divFlag == True:
                 row["Divorced"] = words[2:]
                 divFlag = False
-    #row["Children"] = str(row["Children"]) + '}' #add final child for final row of families
     families = families.append(row, ignore_index=True)
     #print and send to csv
     individuals.to_csv('./Data/individuals.csv')
     families.to_csv('./Data/families.csv')
-    #print(individuals.head(10))
-    #print(families.head(10))
+    print(individuals)
+    print(families)
     file.close()
 
 #part 2: print identifiers and names
