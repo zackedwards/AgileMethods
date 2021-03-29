@@ -11,7 +11,7 @@ def LessThan15Siblings(fam_df):
 
     for index, row in fam_df.iterrows():
     #try:
-        if isinstance(row['Children'], str):        # may be a list
+        if isinstance(row['Children'], list):        # may be a list
             if (len(row['Children']) >= 15) :
                 errors.append("ANOMOLY: FAMILY: US15: {}: Family {} has 15 or more siblings".format(row["ID"]))
 
@@ -22,7 +22,7 @@ def LessThan15Siblings(fam_df):
 class Test(unittest.TestCase):
 
     def testLessThan15Siblings(self):
-        self.assertEqual(LessThan15Siblings(pd.read_csv('../Data/families.csv')), [])
+        self.assertEqual(LessThan15Siblings(pd.read_csv('./Data/families.csv')), [])
 
 
 if __name__ == "__main__":
