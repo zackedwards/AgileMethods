@@ -19,7 +19,7 @@ def no_more_than_5_kids_check(individualsDF, familiesDF):
         if isinstance(famRow["Children"], str) and len(literal_eval(famRow["Children"])) > 5: # Needs to be greater than 5
             birthList=[]
             for childId in literal_eval(famRow['Children']):
-                childBday_dt = convertStringToDatetime(literal_eval(individualsDF.iloc[int(childId[1:])-1]["Birthday"]))
+                childBday_dt = convertStringToDatetime(individualsDF.iloc[int(childId[1:])-1]["Birthday"])
                 birthList.append(childBday_dt)
             for birth in birthList:
                 for birth2 in birthList[(birthList.index(birth)+1):]:
