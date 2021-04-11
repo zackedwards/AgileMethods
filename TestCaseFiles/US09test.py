@@ -36,7 +36,7 @@ def get_parents_death(individuals2, row_fam):
     father_death = [False, None]
     for index, row_indi in individuals2.iterrows():
         if isinstance(row_indi["Death"], str):
-            if row_indi["ID"] == row_fam["Wife ID"][1:] or row_indi["ID"] == row_fam["Husband ID"]:
+            if row_indi["ID"] == row_fam["Wife ID"] or row_indi["ID"] == row_fam["Husband ID"]:
                 death_dt = convertStringToDatetime(row_indi['Death'])
                 if row_indi["ID"] == row_fam["Wife ID"]:
                     mother_death = [True, death_dt]
