@@ -21,31 +21,62 @@ def age_less_than_150(row):
     print(error)
     return error
 
-def are_any_people_over_150(df):
-    list_of_people_over_150 = []
+def people_over_150(df):
+    name_list = []
 
     for index, row in df.iterrows():
         if row['Age'] >= 150:
-            list_of_people_over_150.append(row['Name'])
+            name_list.append(row['Name'])
 
-    if list_of_people_over_150 == []:
+    if name_list == []:
         return False
     else:
         return True
 
-class Test(unittest.TestCase):
+def people_under_150(df):
+    name_list = []
 
+    for index, row in df.iterrows():
+        if row['Age'] < 150:
+            name_list.append(row['Name'])
+
+    if len(name_list) == (len(df) - 1):
+        return True
+    else:
+        return False
+    
+
+class Test(unittest.TestCase):
 
     def testAgeLessThan150(self):
         for index, row in file.iterrows():
-            #print(row)
+            print(row)
             self.assertEqual(age_less_than_150(row), [])
-            #if row['Alive'] == 'True':
-                #self.asserEqual(age_less_than_150(row), ["ERROR: INDIVIDUAL: US07: I1: More than 150 years old - Birth ['11', 'NOV', '1999']"])
-            self.assertFalse(are_any_people_over_150(file))
+
+    def testAgeLessThan150_2(self):
+        for index, row in file.iterrows():
+            print(row)
+            self.assertFalse(people_over_150(file))
+
+    def testAgeLessThan150_3(self):
+        for index, row in file.iterrows():
+            print(row)
+            self.assertTrue(people_under_150(file))
+
+    def testAgeLessThan150_4(self):
+        for index, row in file.iterrows():
+            print(row)
+            if row['Alive'] == 'True' and row['Age'] >= 150 :
+                self.assertEqual(age_less_than_150(row), "ERROR: INDIVIDUAL: US07: {}: More than 150 years old - Birth {}".format(row['ID'], row['Birthday']))
+
+    def testAgeLessThan150_5(self):
+        for index, row in file.iterrows():
+            print(row)
+            if row['Alive'] == 'False' and row['Age'] >= 150 :
+                self.assertEqual(age_less_than_150(row), "ERROR: INDIVIDUAL: US07: {}: More than 150 years old at death - Birth {}: Death {}".format(row['ID'], row['Birthday'], row['Death']))
 
 
 if __name__ == "__main__":
-    file = pd.read_csv('../Data/individuals.csv')
+    file = pd.read_csv('./Data/individuals.csv')
     #print(file.head())
     unittest.main()

@@ -3,27 +3,27 @@ Created on Feb 27, 2021
 
 @author: Zack Edwards
 '''
-from ged_reader import monthNumber
-from ast import literal_eval
-
+import sys
 import unittest
 import pandas as pd
 import datetime
-import sys
 sys.path.insert(0, '../AgileMethods')
 
+from functions import monthNumber
+from ast import literal_eval
 
-def BirthBeforeDeath(row):
+
+def MarriageBeforeDivorce(row):
     msg = ''
-    if row['Alive'] == False:
-        birth = literal_eval(row['Birthday'])
-        death = literal_eval(row['Death'])
-        birth_datetime = datetime.datetime(int(birth[2]), monthNumber(birth[1]), int(birth[0]))
-        death_datetime = datetime.datetime(int(death[2]), monthNumber(death[1]), int(death[0]))
+    if isinstance(row['Married'], str) and isinstance(row['Divorced'], str):
+        married = literal_eval(row['Married'])
+        divorce = literal_eval(row['Divorced'])
+        married_datetime = datetime.datetime(int(married[2]), monthNumber(married[1]), int(married[0]))
+        divorce_datetime = datetime.datetime(int(divorce[2]), monthNumber(divorce[1]), int(divorce[0]))
 
-        if birth_datetime > death_datetime:
-            msg = ('ERROR: INDIVIDUAL: US03: ' + str(row['ID']) + ' Died: ' + str(death) +
-                   ' occurs before Birth: ' + str(birth))
+        if married_datetime > divorce_datetime:
+            msg = ('ERROR: INDIVIDUAL: US03: ' + str(row['ID']) + ': Divorced: ' + str(divorce) +
+                   ' occurs before married: ' + str(married))
     if msg != '':
         print(msg)
         return False
@@ -33,32 +33,32 @@ def BirthBeforeDeath(row):
 
 class Test(unittest.TestCase):
 
-    def testBirthBeforeDeathAll(self):
-        file = pd.read_csv('../Data/individuals.csv')
+    def testMarriageBeforeDivorceAll(self):
+        file = pd.read_csv('./Data/families.csv')
         for index, row in file.iterrows():
-            self.assertEqual(BirthBeforeDeath(row), True)
+            self.assertEqual(MarriageBeforeDivorce(row), True)
 
-    def testBirthBeforeDeath1(self):
-        file = pd.read_csv('../Data/individuals.csv')
-        self.assertEqual(BirthBeforeDeath(file.iloc[2]), True)
+    def testMarriageBeforeDivorce1(self):
+        file = pd.read_csv('./Data/families.csv')
+        self.assertEqual(MarriageBeforeDivorce(file.iloc[2]), True)
 
-    def testBirthBeforeDeath2(self):
-        file = pd.read_csv('../Data/individuals.csv')
-        self.assertEqual(BirthBeforeDeath(file.iloc[6]), True)
+    def testMarriageBeforeDivorce2(self):
+        file = pd.read_csv('./Data/families.csv')
+        self.assertEqual(MarriageBeforeDivorce(file.iloc[3]), True)
 
-    def testBirthBeforeDeath3(self):
-        file = pd.read_csv('../Data/individuals.csv')
-        self.assertEqual(BirthBeforeDeath(file.iloc[8]), True)
+    def testMarriageBeforeDivorce3(self):
+        file = pd.read_csv('./Data/families.csv')
+        self.assertEqual(MarriageBeforeDivorce(file.iloc[1]), True)
 
-    def testBirthBeforeDeath4(self):
-        file = pd.read_csv('../Data/individuals.csv')
-        self.assertEqual(BirthBeforeDeath(file.iloc[7]), True)
+    def testMarriageBeforeDivorce4(self):
+        file = pd.read_csv('./Data/families.csv')
+        self.assertEqual(MarriageBeforeDivorce(file.iloc[5]), True)
 
-    def testBirthBeforeDeath5(self):
-        expected_err = ["ERROR: INDIVIDUAL: US03: Test Died: ['10','NOV','1998'] "
-                        "occurs before Birth: ['11','DEC','1999']"]
-        self.assertEqual(BirthBeforeDeath({'Alive': False, 'ID': 'Test', 'Birthday': "['11','DEC','1999']",
-                                           'Death': "['10','NOV','1998']"}), False)
+    def testMarriageBeforeDivorce5(self):
+        expected_err = ["ERROR: FAMILY: US03: Test: Divorced: ['10','NOV','1998'] "
+                        "occurs before Marriage: ['11','DEC','1999']"]
+        self.assertEqual(MarriageBeforeDivorce({'ID': 'Test', 'Married': "['11','DEC','1999']",
+                                           'Divorced': "['10','NOV','1998']"}), False)
 
 
 if __name__ == "__main__":

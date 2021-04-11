@@ -1,13 +1,13 @@
 #Author: Zack Edwards, Valentina Bustamante, William Escamilla, Dana Faustino
 import pandas as pd
 import datetime
-
+from functions import monthNumber
 #print('Please enter the path file for your GEDCOM file (.ged)')
 #This is the local path file for my gedcom file
 #path = r'C:\Users\Zack Edwards\OneDrive - stevens.edu\Semester 6\555\AgileMethods\milestone3\FamilyTree.ged'
 #path = input("")
 #open the file
-file = open('../FamilyTree.ged', 'r')
+file = open('./FamilyTree.ged', 'r')
 
 #Grab the current date
 currDate = datetime.datetime.now()
@@ -15,11 +15,6 @@ currDate = datetime.datetime.now()
 #create dataframes for the individuals and families
 individuals = pd.DataFrame(columns = ['ID','Name','Gender','Birthday','Age','Alive','Death','Child','Spouse'])
 families = pd.DataFrame(columns = ['ID','Married','Divorced','Husband ID','Husband Name','Wife ID','Wife Name','Children'])
-
-#define a function which determines the number of a month
-def monthNumber(month):
-    months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']
-    return months.index(month) + 1
 
 #defining variables to be used in the while loop
 row = {}
@@ -117,8 +112,8 @@ for line in file:
 #row["Children"] = str(row["Children"]) + '}' #add final child for final row of families
 families = families.append(row, ignore_index=True)
 #print and send to csv
-individuals.to_csv('../Data/individuals.csv')
-families.to_csv('../Data/families.csv')
+individuals.to_csv('./Data/individuals.csv')
+families.to_csv('./Data/families.csv')
 #print(individuals.head(10))
 #print(families.head(10))
 file.close()
