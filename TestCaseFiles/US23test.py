@@ -22,7 +22,7 @@ def UniqueNameAndBirth(indi_df):
 
 class Test(unittest.TestCase):
     def testUniqueNameAndBirth(self):
-        self.assertEqual(UniqueNameAndBirth(pd.read_csv('../Data/individuals.csv')), [])
+        self.assertEqual(UniqueNameAndBirth(pd.read_csv('../Data/individuals3.csv')), [])
 
 if __name__ == "__main__":
     unittest.main()

@@ -23,7 +23,7 @@ def UniqueSpousesAndMarriage(indi_df):
 
 class Test(unittest.TestCase):
     def testUniqueSpousesAndMarriage(self):
-        self.assertEqual(UniqueSpousesAndMarriage(pd.read_csv('../Data/families.csv')), [])
+        self.assertEqual(UniqueSpousesAndMarriage(pd.read_csv('../Data/families3.csv')), [])
 
 if __name__ == "__main__":
     unittest.main()
