@@ -1,15 +1,17 @@
+
 ID,Name,Gender,Birthday,Age,Alive,Death,Child,Spouse
 I1,"['Bat', '/Wayne/']",M,"['11', 'NOV', '1999']",21,True,,F1,F4
-I2,"['Thomas', '/Wayne/']",M,"['10', 'OCT', '2021']",57,True,,F2,F1
+I2,"['Thomas', '/Wayne/']",M,"['10', 'OCT', '1963']",57,True,,F2,F1
 I3,"['Martha', '/Kane/']",F,"['2', 'AUG', '1965']",55,True,,F3,F1
 I4,['Robin'],M,"['12', 'SEP', '2008']",12,True,,F4,
 I5,"['Stephen', '/Kane/']",M,"['16', 'JUN', '1990']",30,True,,,F3
 I6,"['Elizabeth', '/Jameson/']",F,"['14', 'OCT', '1934']",58,False,"['11', 'DEC', '1992']",,F3
-I7,"['Frederick', '/Wayne/']",M,"['5', 'SEP', '2021']",65,False,"['6', 'JAN', '1989']",,F5
+I7,"['Frederick', '/Wayne/']",M,"['5', 'SEP', '1923']",65,False,"['6', 'JAN', '1989']",,F5
 I8,"['Mary', '/Mork/']",F,"['5', 'MAR', '1925']",73,False,"['3', 'AUG', '1998']",,F2
 I9,"['Sophie', '/Smith/']",F,"['2', 'NOV', '1930']",90,True,,,F6
 I10,"['Kanye', '/West/']",M,"['2', 'SEP', '1980']",40,True,,,F6
-I11,"['North', '/West/']",M,"['3', 'MAR', '2005']",15,True,,F6,
+I11,"['North', '/West/']",M,"['3', 'MAR', '2005']",16,True,,F6,
 I12,"['South', '/West/']",F,"['2', 'AUG', '2000']",20,True,,F6,
-I13,"['East', '/West/']",,"['10', 'FEB', '2002']",19,True,,F6,
-I14,"['George', '/Wayne/']",,"['1', 'JUN', '1955']",,,,F5,
+I13,"['East', '/West/']",M,"['10', 'FEB', '2002']",19,True,,F6,
+I14,"['George', '/Wayne/']",M,"['1', 'JUN', '1955']",,,,F5,
+I14,"['George', '/Wayne/']",M,"['1', 'JUN', '1955']",,,,F5,

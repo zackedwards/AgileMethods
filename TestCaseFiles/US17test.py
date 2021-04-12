@@ -8,7 +8,7 @@ Descripion: Creates an error if parents marry descendants)
 import unittest
 import pandas as pd
 import sys
-sys.path.insert(0, '../AgileMethods')
+sys.path.insert(0, '../')
 
 from functions import convertStringToDatetime
 
@@ -37,7 +37,7 @@ class Test(unittest.TestCase):
         errors = []
         for index, row_fam in file.iterrows():
             errors += (parents_marry_children_check(pd.read_csv('../Data/families.csv'), row_fam))
-        self.assertEqual(errors, [])
+        self.assertEqual(errors, ['ERROR: FAMILY: US18: F1: Spouse I3 is the mother of I2 in family F1 and are married'])
 
 if __name__ == "__main__":
     unittest.main()
