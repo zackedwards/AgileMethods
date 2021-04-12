@@ -30,7 +30,7 @@ def cousins_married_check(families, row_fam):
             for index, row_fam2 in families.iterrows():
                 if isinstance(row_fam2["Wife ID"],str) and isinstance(row_fam2["Husband ID"],str):
                     if row_fam2["Husband ID"] in all_cousins and row_fam2["Wife ID"] in all_cousins:
-                        errors.append("ERROR: FAMILY: US18: {}: Spouses {} and {} are cousins in family {}".format(row_fam2["ID"], row_fam2["Wife ID"], row_fam2["Husband ID"], row_fam["ID"]))
+                        errors.append("ERROR: FAMILY: US19: {}: Spouses {} and {} are cousins in family {}".format(row_fam2["ID"], row_fam2["Wife ID"], row_fam2["Husband ID"], row_fam["ID"]))
         return errors
     else: 
         return []
