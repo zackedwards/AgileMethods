@@ -30,6 +30,7 @@ Families    Unnamed: 0   ID                Married              Divorced Husband
 11          11  F12                     []                   NaN        I13        ['East', '/West/']     I19         ['Simba', '/West/']                ['I20']
 12          12  F13  ['13', 'SEP', '2003']                   NaN        I20     ['Cousin3', '/West/']     I17       ['Cousin1', '/West/']                    NaN
 13          13  F14   ['7', 'OCT', '2001']                   NaN        I18     ['Cousin2', '/West/']      I9         ['Simba', '/West/']                    NaN
+14          14  F14   ['7', 'OCT', '2001']                   NaN        I18     ['Cousin2', '/West/']      I9         ['Simba', '/West/']                    NaN
 
 ERROR: FAMILY: US18: F6: Spouse I3 is the father of I1 in family F1 and are married
 ERROR: FAMILY: US18: F9: Spouse I9 is the mother of I14 in family F5 and are married
@@ -40,5 +41,7 @@ ERROR: FAMILY: US21: F1: Gender of Husband I3 is not Male
 ERROR: FAMILY: US21: F1: Gender of Wife I2 is not Female
 ERROR: FAMILY: US21: F6: Gender of Husband I3 is not Male
 ERROR: FAMILY: US21: F6: Gender of Wife I1 is not Female
+ERROR: FAMILY: US22: F14: Family's ID already seen before, not unique
 ERROR: INDIVIDUAL: US22: I14: Individual's ID already seen before, not unique
 ANOMOLY: INDIVIDUAL: US23: I14: Does not have unique name ['George', '/Wayne/'] and birthday ['1', 'JUN', '1955']
+ANOMOLY: FAMILY: US24: F14: Does not have unique spouses, ['Cousin2', '/West/'] and ['Simba', '/West/'], and marriage date ['7', 'OCT', '2001']
