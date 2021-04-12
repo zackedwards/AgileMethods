@@ -27,7 +27,8 @@ def correct_gender_check(individualsDF, familiesDF):
                     if isinstance(indiRow1['Gender'], str):
                         hus_gender = indiRow1['Gender']
                 if indiRow1['ID'] == wife_id:
-                    wife_gender = indiRow1['Gender']
+                    if isinstance(indiRow1['Gender'], str):
+                        wife_gender = indiRow1['Gender']
 
         if hus_gender != "M":
             errors.append("ERROR: FAMILY: US21: {}: Gender of Husband {} is not Male".format(famRow["ID"], hus_id))
