@@ -6,11 +6,11 @@ Created on Apr 9, 2021
 import unittest
 import pandas as pd
 
-def UniqueSpousesAndMarriage(indi_df):
+def UniqueSpousesAndMarriage(fam_df):
     errors = []
     seen = []
 
-    for index, row in indi_df.iterrows():
+    for index, row in fam_df.iterrows():
         #try:      
         #if isinstance(row['Married'], str) and isinstance(row['Husband Name'], str)  and isinstance(row['Wife Name'], str):
             if (row['Married'], row['Husband Name'], row['Wife Name']) in seen:

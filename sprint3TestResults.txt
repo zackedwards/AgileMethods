@@ -32,3 +32,11 @@ ERROR: FAMILY: US18: F7: Spouse I3 is the father of I1 in family F1 and are marr
 ERROR: FAMILY: US18: F10: Spouse I9 is the mother of I14 in family F5 and are married
 ERROR: FAMILY: US18: F8: Spouses I12 and I11 are siblings in family F6
 ERROR: FAMILY: US18: F8: Spouses I12 and I11 are siblings in family F6
+ERROR: FAMILY: US21: F1: Gender of Husband I3 is not Male
+ERROR: FAMILY: US21: F1: Gender of Wife I2 is not Female
+ERROR: FAMILY: US21: F7: Gender of Husband I3 is not Male
+ERROR: FAMILY: US21: F7: Gender of Wife I1 is not Female
+ERROR: FAMILY: US22: F6: Family's ID already seen before, not unique
+ERROR: INDIVIDUAL: US22: I14: Individual's ID already seen before, not unique
+ANOMOLY: INDIVIDUAL: US23: I14: Does not have unique name ['George', '/Wayne/'] and birthday ['1', 'JUN', '1955']
+ANOMOLY: FAMILY: US24: F6: Does not have unique spouses, ['Kanye', '/West/'] and ['Sophie', '/Smith/'], and marriage date ['2', 'MAY', '2000']
