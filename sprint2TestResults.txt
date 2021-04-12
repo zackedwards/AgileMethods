@@ -1,46 +1,25 @@
-People     ID                       Name Gender               Birthday    Age  Alive                  Death Child Spouse
-0    I1     ['Dana', '/Faustino/']      F   ['4', 'OCT', '2001']   19.0   True                    NaN    F1    NaN
-1    I2  ['Michael', '/Faustino/']      M  ['12', 'APR', '1800']  200.0  False  ['10', 'OCT', '2000']    F2     F1
-2    I3    ['Lilibeth', '/Ajero/']      F  ['10', 'NOV', '1800']  220.0   True                    NaN    F3     F1
-3    I4     ['Joey', '/Faustino/']      M  ['12', 'FEB', '2003']   -2.0  False   ['9', 'SEP', '2001']    F1    NaN
-4    I5        ['Ryan', '/Ajero/']      M   ['9', 'NOV', '1920']  100.0   True                    NaN   NaN     F3
-5    I6         ['Erica', '/Lee/']      F  ['12', 'NOV', '1920']  109.0  False   ['9', 'NOV', '2030']   NaN     F3
-6    I7        ['Jing', '/Ajero/']      F   ['8', 'NOV', '1960']   58.0  False  ['10', 'AUG', '2019']    F3     F4
-7    I8        ['Tom', '/Carino/']      M   ['9', 'NOV', '2020']   -1.0   True                    NaN   NaN     F4
-8    I9       ['Sarah', '/Ajero/']      F  ['12', 'NOV', '1969']   51.0   True                    NaN    F3     F5
-9   I10     ['John', '/Cardenas/']      M   ['9', 'NOV', '1969']   51.0   True                    NaN   NaN     F5
-10  I11     ['Ryan', '/Faustino/']      M   ['8', 'AUG', '1920']  100.0   True                    NaN   NaN     F2
-11  I12    ['Erica', '/Faustino/']      F  ['11', 'AUG', '1920']  100.0   True                    NaN   NaN     F2
-12  I13     ['Kyle', '/Faustino/']      M   ['8', 'SEP', '1950']   50.0  False  ['13', 'OCT', '2000']    F2     F6
-13  I14     ['Lily', '/Balleras/']      F   ['9', 'OCT', '1950']   70.0   True                    NaN   NaN     F6
-14  I15   ['Maggie', '/Faustino/']      F   ['8', 'DEC', '1998']   22.0   True                    NaN    F1    NaN
-15  I16    ['Keith', '/Faustino/']      M  ['12', 'NOV', '1920']  100.0   True                    NaN    F2     F7
-16  I17   ['Rachel', '/Balleras/']      F  ['13', 'SEP', '1940']   80.0   True                    NaN   NaN     F7
-17  I18       ['Henry', '/Ajero/']      M   ['9', 'SEP', '1950']   70.0   True                    NaN    F3     F8
-18  I19        ['Cary', '/Ajero/']      F   ['8', 'AUG', '1950']   70.0   True                    NaN   NaN     F8
-19  I20      ['Ray', '/Faustino/']      M   ['4', 'SEP', '1950']   39.0  False   ['4', 'AUG', '1990']    F2     F9
-20  I21     ['Emma', '/Faustino/']      F   ['5', 'AUG', '1960']   39.0  False   ['4', 'OCT', '1999']   NaN     F9
-21  I22     ['Will', '/Faustino/']      M   ['9', 'FEB', '1999']   22.0   True                    NaN    F6    NaN
-22  I23     ['Zack', '/Faustino/']      M   ['9', 'FEB', '1999']   22.0   True                    NaN    F6    NaN
-23  I24      ['Yan', '/Faustino/']      M   ['9', 'FEB', '1999']   22.0   True                    NaN    F6    NaN
-24  I25     ['Matt', '/Faustino/']      M   ['9', 'FEB', '1999']   22.0   True                    NaN    F6    NaN
-25  I26     ['Gary', '/Faustino/']      M   ['9', 'FEB', '1999']   22.0   True                    NaN    F6    NaN
-26  I27   ['Austin', '/Faustino/']      M   ['9', 'FEB', '1999']    NaN    NaN                    NaN    F6    NaN
+People     ID                        Name Gender               Birthday   Age  Alive                  Death Child Spouse
+0    I1          ['Bat', '/Wayne/']      M  ['11', 'NOV', '1999']  21.0   True                    NaN    F1     F4
+1    I2       ['Thomas', '/Wayne/']      M  ['10', 'OCT', '1963']  57.0   True                    NaN    F2     F1
+2    I3        ['Martha', '/Kane/']      F   ['2', 'AUG', '1965']  55.0   True                    NaN    F3     F1
+3    I4                   ['Robin']      M  ['12', 'SEP', '2008']  12.0   True                    NaN    F4    NaN
+4    I5       ['Stephen', '/Kane/']      M  ['16', 'JUN', '1990']  30.0   True                    NaN   NaN     F3
+5    I6  ['Elizabeth', '/Jameson/']      F  ['14', 'OCT', '1934']  58.0  False  ['11', 'DEC', '1992']   NaN     F3
+6    I7    ['Frederick', '/Wayne/']      M   ['5', 'SEP', '1923']  65.0  False   ['6', 'JAN', '1989']   NaN     F5
+7    I8          ['Mary', '/Mork/']      F   ['5', 'MAR', '1925']  73.0  False   ['3', 'AUG', '1998']   NaN     F2
+8    I9       ['Sophie', '/Smith/']      F   ['2', 'NOV', '1930']  90.0   True                    NaN   NaN     F6
+9   I10         ['Kanye', '/West/']      M   ['2', 'SEP', '1980']  40.0   True                    NaN   NaN     F6
+10  I11         ['North', '/West/']      M   ['3', 'MAR', '2005']  16.0   True                    NaN    F6    NaN
+11  I12         ['South', '/West/']      F   ['2', 'AUG', '2000']  20.0   True                    NaN    F6    NaN
+12  I13          ['East', '/West/']    NaN  ['10', 'FEB', '2002']  19.0   True                    NaN    F6    NaN
+13  I14       ['George', '/Wayne/']    NaN   ['1', 'JUN', '1955']   NaN    NaN                    NaN    F5    NaN
 
-Families   Unnamed: 0  ID                Married               Divorced Husband ID               Husband Name Wife ID                 Wife Name                                    Children
-0           0  F1   ['8', 'OCT', '2001']                    NaN         I2  ['Michael', '/Faustino/']      I3   ['Lilibeth', '/Ajero/']                         ['I1', 'I4', 'I15']
-1           1  F2                    NaN                    NaN        I11     ['Ryan', '/Faustino/']     I12   ['Erica', '/Faustino/']                 ['I2', 'I13', 'I16', 'I20']
-2           2  F3                    NaN                    NaN         I5        ['Ryan', '/Ajero/']      I6        ['Erica', '/Lee/']                   ['I3', 'I7', 'I9', 'I18']
-3           3  F4  ['12', 'SEP', '2020']                    NaN         I8        ['Tom', '/Carino/']      I7       ['Jing', '/Ajero/']                                         NaN
-4           4  F5  ['17', 'AUG', '2001']  ['13', 'SEP', '1999']        I10     ['John', '/Cardenas/']      I9      ['Sarah', '/Ajero/']                                         NaN
-5           5  F6  ['12', 'OCT', '2005']  ['11', 'OCT', '1999']        I13     ['Kyle', '/Faustino/']     I14    ['Lily', '/Balleras/']  ['I22', 'I23', 'I24', 'I25', 'I26', 'I27']
-6           6  F7   ['8', 'AUG', '1925']                    NaN        I16    ['Keith', '/Faustino/']     I17  ['Rachel', '/Balleras/']                                         NaN
-7           7  F8   ['4', 'JUL', '2000']   ['9', 'SEP', '1990']        I18       ['Henry', '/Ajero/']     I19       ['Cary', '/Ajero/']                                         NaN
-8           8  F9  ['10', 'NOV', '2000']   ['6', 'NOV', '2001']        I20      ['Ray', '/Faustino/']     I21    ['Emma', '/Faustino/']                                         NaN
+Families   Unnamed: 0  ID               Married              Divorced Husband ID              Husband Name Wife ID                   Wife Name               Children
+0           0  F1  ['2', 'JUL', '1998']                   NaN         I2     ['Thomas', '/Wayne/']      I3        ['Martha', '/Kane/']                 ['I1']
+1           1  F2  ['2', 'JUL', '1960']                   NaN         I7  ['Frederick', '/Wayne/']      I8          ['Mary', '/Mork/']                 ['I2']
+2           2  F3                   NaN                   NaN         I5     ['Stephen', '/Kane/']      I6  ['Elizabeth', '/Jameson/']                 ['I3']
+3           3  F4                   NaN                   NaN         I1        ['Bat', '/Wayne/']     NaN                         NaN                 ['I4']
+4           4  F5  ['9', 'OCT', '1950']  ['2', 'APR', '1957']         I7  ['Frederick', '/Wayne/']      I9       ['Sophie', '/Smith/']                ['I14']
+5           5  F6  ['2', 'MAY', '2000']                   NaN        I10       ['Kanye', '/West/']      I9       ['Sophie', '/Smith/']  ['I11', 'I12', 'I13']
 
-ERROR: INDIVIDUAL: US10: I8: Married 2020-09-12 before age 14
-ERROR: INDIVIDUAL: US10: I16: Married 1925-08-08 before age 14
-ERROR: INDIVIDUAL: US10: I17: Married 1925-08-08 before age 14
-ERROR: FAMILY: US14: F6: More than 5 children born at the same time (Within 2 days of eachother)
-ERROR: FAMILY: US09: F1: Child I1 born 2001-10-04 after more than nine months after father's death on 2000-10-10
-ERROR: FAMILY: US09: F1: Child I4 born 2003-02-12 after more than nine months after father's death on 2000-10-10
+ERROR: FAMILY: US09: F5: Child I1 born 1999-11-11 after more than nine months after father's death on 1989-01-06
