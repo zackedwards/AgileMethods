@@ -8,7 +8,7 @@ Descripion: Creates error if siblings are married)
 import unittest
 import pandas as pd
 import sys
-sys.path.insert(0, '../AgileMethods')
+sys.path.insert(0, '../')
 
 from functions import convertStringToDatetime
 
@@ -21,7 +21,7 @@ def siblings_married_check(families, row_fam_children):
             if isinstance(row_fam["Wife ID"],str) and isinstance(row_fam["Husband ID"],str):
                 if row_fam["Husband ID"] in children and row_fam["Wife ID"] in children:
                     errors.append("ERROR: FAMILY: US18: {}: Spouses {} and {} are siblings in family {}".format(row_fam["ID"], row_fam["Wife ID"], row_fam["Husband ID"], row_fam_children["ID"]))
-        print(errors)
+
         return errors
     else: 
         return []
@@ -33,7 +33,7 @@ class Test(unittest.TestCase):
         errors = []
         for index, row_fam in file.iterrows():
             errors += (siblings_married_check(pd.read_csv('../Data/families.csv'), row_fam))
-        self.assertEqual(errors, [])
+        self.assertEqual(errors, ['ERROR: FAMILY: US18: F1: Spouses I3 and I2 are siblings in family F10'])
 
 if __name__ == "__main__":
     unittest.main()
