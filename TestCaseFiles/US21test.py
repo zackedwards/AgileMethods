@@ -21,8 +21,13 @@ def correct_gender_check(individualsDF, familiesDF):
         if isinstance(famRow['Wife ID'], str):
             wife_id = famRow['Wife ID']
 
-        hus_gender = individualsDF.iloc[int(hus_id[1:])-1]["Gender"]
-        wife_gender = individualsDF.iloc[int(wife_id[1:])-1]["Gender"]
+        for index, indiRow1 in individualsDF.iterrows():
+            if isinstance(indiRow1['ID'], str):
+                if indiRow1['ID'] == hus_id:                    
+                    if isinstance(indiRow1['Gender'], str):
+                        hus_gender = indiRow1['Gender']
+                if indiRow1['ID'] == wife_id:
+                    wife_gender = indiRow1['Gender']
 
         if hus_gender != "M":
             errors.append("ERROR: FAMILY: US21: {}: Gender of Husband {} is not Male".format(famRow["ID"], hus_id))
