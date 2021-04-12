@@ -35,6 +35,8 @@ def cousins_married_check(families): #aunts and uncles
                 if isinstance(famRow2['Wife ID'], str) and isinstance(famRow2['Husband ID'], str):
                     if famRow2['Wife ID'] in cousinsList and famRow2['Husband ID'] in cousinsList:
                         errors.append("ERROR: FAMILY: US19: {}: Spouses {} and {} are cousins in family {}".format(famRow2["ID"], famRow2["Wife ID"], famRow2["Husband ID"], famRow["ID"]))
+                        cousinsList.remove(famRow2['Wife ID'])
+                        cousinsList.remove(famRow2['Husband ID'])
     return errors
 
 

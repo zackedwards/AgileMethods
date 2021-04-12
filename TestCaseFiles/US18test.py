@@ -7,24 +7,22 @@ Descripion: Creates error if siblings are married)
 '''
 import unittest
 import pandas as pd
-import sys
-sys.path.insert(0, '../')
-
-from functions import convertStringToDatetime
+from ast import literal_eval
 
 # Checks if husband id and wife id from a family are both in the children list of another family 
 def siblings_married_check(families, row_fam_children):
-    children = row_fam_children["Children"]
     errors = []
-    if not isinstance(children ,float):
-        for index, row_fam in families.iterrows():
-            if isinstance(row_fam["Wife ID"],str) and isinstance(row_fam["Husband ID"],str):
-                if row_fam["Husband ID"] in children and row_fam["Wife ID"] in children:
-                    errors.append("ERROR: FAMILY: US18: {}: Spouses {} and {} are siblings in family {}".format(row_fam["ID"], row_fam["Wife ID"], row_fam["Husband ID"], row_fam_children["ID"]))
+    if isinstance(row_fam_children["Children"], str):
+        children = literal_eval(row_fam_children["Children"])
+        if not isinstance(children ,float):
+            for index, row_fam in families.iterrows():
+                if isinstance(row_fam["Wife ID"],str) and isinstance(row_fam["Husband ID"],str):
+                    if row_fam["Husband ID"] in children and row_fam["Wife ID"] in children:
+                        errors.append("ERROR: FAMILY: US18: {}: Spouses {} and {} are siblings in family {}".format(row_fam["ID"], row_fam["Wife ID"], row_fam["Husband ID"], row_fam_children["ID"]))
+                        children.remove(row_fam["Wife ID"])
+                        children.remove(row_fam["Husband ID"])
 
-        return errors
-    else: 
-        return []
+    return errors
 
 class Test(unittest.TestCase):
     
