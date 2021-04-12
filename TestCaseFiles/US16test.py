@@ -6,27 +6,30 @@ Created on Mar 6, 2021
 import unittest
 import pandas as pd
 
+from ast import literal_eval
+
 def MaleLastNames(fam_row, indi_df):
     errors = []
-    husband_last_name = fam_row['Husband Name'][1]
+    husband_last_name = literal_eval(fam_row['Husband Name'])[1]
     children_list = fam_row['Children']
 
     for index, row in indi_df.iterrows():
     #try:
-        if row['Gender'] == 'M' and row['ID'] in children_list:
-            if row['Name'][1] != husband_last_name:
-                errors.append("ERROR: FAMILY: US16: {}: Child {} does not have father's last name".format(fam_row["ID"], row['ID']))
+        if isinstance(children_list, str):          #may be a list
+            if row['Gender'] == 'M' and row['ID'] in children_list:
+                if literal_eval(row['Name'])[1] != husband_last_name:
+                    errors.append("ANOMOLY: FAMILY: US16: {}: Child {} does not have father's last name".format(fam_row["ID"], row['ID']))
 
-    print(errors)
+    #print(errors)
     return errors
 
 
 class Test(unittest.TestCase):
 
     def testMaleLastNames(self):
-        file = pd.read_csv('families.csv')
+        file = pd.read_csv('./Data/families.csv')
         for index, row in file.iterrows():
-            self.assertEqual(MaleLastNames(row, pd.read_csv('individuals.csv')), [])
+            self.assertEqual(MaleLastNames(row, pd.read_csv('./Data/individuals.csv')), [])
 
     
 

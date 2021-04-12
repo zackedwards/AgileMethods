@@ -5,12 +5,10 @@ Created on Feb 28, 2021
 '''
 import unittest
 import pandas as pd
-import datetime
 import sys
 sys.path.insert(0, '../AgileMethods')
 
-from ast import literal_eval
-from functions import monthNumber
+from functions import convertStringToDatetime
     
 # Makes sure marriage happened before death of either spouse. If not, error thrown
 def marriage_before_death_check(famRow, individualsDF):
@@ -18,14 +16,12 @@ def marriage_before_death_check(famRow, individualsDF):
     # Only runs if the family was actually married and does not have a value of "NaN"
     if isinstance(famRow["Married"], str):
         # Retrieves the married date and converts it to a number using "datetime.datetime"
-        marriedDate = literal_eval(famRow["Married"])
-        married_dt = datetime.datetime(int(marriedDate[2]), monthNumber(marriedDate[1]), int(marriedDate[0]))
+        married_dt = convertStringToDatetime(famRow['Married'])
 
         # Checks if the husband in the family is dead, if so, proceed
         if individualsDF.iloc[int(famRow["Husband ID"][1:])-1]["Alive"] == False:
             # Retrieves the husband's death date and converts it to a number using "datetime.datetime"
-            husbandDeathDate = literal_eval(individualsDF.iloc[int(famRow["Husband ID"][1:])-1]["Death"])
-            husbandDeath_dt = datetime.datetime(int(husbandDeathDate[2]), monthNumber(husbandDeathDate[1]), int(husbandDeathDate[0]))
+            husbandDeath_dt = convertStringToDatetime(individualsDF.iloc[int(famRow["Husband ID"][1:])-1]["Death"])
 
             # Finally checks if marriage occured after the husband died, if so, append an error
             if married_dt > husbandDeath_dt:
@@ -34,8 +30,7 @@ def marriage_before_death_check(famRow, individualsDF):
         # Checks if the wife in the family is dead, if so, proceed
         if individualsDF.iloc[int(famRow["Wife ID"][1:])-1]["Alive"] == False:
             # Retrieves the wife's death date and converts it to a number using "datetime.datetime"
-            wifeDeathDate = literal_eval(individualsDF.iloc[int(famRow["Wife ID"][1:])-1]["Death"])
-            wifeDeath_dt = datetime.datetime(int(wifeDeathDate[2]), monthNumber(wifeDeathDate[1]), int(wifeDeathDate[0]))
+            wifeDeath_dt = convertStringToDatetime(individualsDF.iloc[int(famRow["Wife ID"][1:])-1]["Death"])
 
             # Finally checks if marriage occured after the wife died, if so, append an error
             if married_dt > wifeDeath_dt:
