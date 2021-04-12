@@ -11,3 +11,8 @@
 8,F8,"['4', 'MAY', '2018']",,I11,"['North', '/West/']",I12,"['South', '/West/']",
 9,F9,"['2', 'JUL', '1960']",,I14,"['George', '/Wayne/']",I12,"['South', '/West/']",
 10,F10,"['2', 'MAY', '2000']",,I14,"['George', '/Wayne/']",I9,"['Sophie', '/Smith/']",
+11,F6,"['2', 'MAY', '2000']",,I10,"['Kanye', '/West/']",I9,"['Sophie', '/Smith/']","['I11', 'I12', 'I13']"
+12,F7,,,I16,"['Christian', '/West/']",I12,"['South', '/West/']","['I17', 'I18']"
+13,F8,[],,I13,"['East', '/West/']",I19,"['Simba', '/West/']",['I20']
+14,F10,"['13', 'SEP', '2003']",,I20,"['Cousin3', '/West/']",I17,"['Cousin1', '/West/']",
+15,F11,"['7', 'OCT', '2001']",,I18,"['Cousin2', '/West/']",I9,"['Simba', '/West/']",

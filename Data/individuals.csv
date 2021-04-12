@@ -1,44 +1,21 @@
 ID,Name,Gender,Birthday,Age,Alive,Death,Child,Spouse
-I1,"['Dana', '/Faustino/']",F,"['4', 'OCT', '2001']",19,True,,F1,
-I2,"['Michael', '/Faustino/']",M,"['12', 'APR', '1800']",200,False,"['10', 'OCT', '2000']",F2,F1
-I3,"['Lilibeth', '/Ajero/']",F,"['10', 'NOV', '1800']",220,True,,F3,F1
-I4,"['Joey', '/Faustino/']",M,"['12', 'FEB', '2003']",-2,False,"['9', 'SEP', '2001']",F1,
-I5,"['Ryan', '/Ajero/']",M,"['9', 'NOV', '1920']",100,True,,,F3
-I6,"['Erica', '/Lee/']",F,"['12', 'NOV', '1920']",109,False,"['9', 'NOV', '2030']",,F3
-I7,"['Jing', '/Ajero/']",F,"['8', 'NOV', '1960']",58,False,"['10', 'AUG', '2019']",F3,F4
-I8,"['Tom', '/Carino/']",M,"['9', 'NOV', '2021']",-1,True,,,F4
-I9,"['Sarah', '/Ajero/']",F,"['12', 'NOV', '1969']",51,True,,F3,F5
-I10,"['John', '/Cardenas/']",M,"['9', 'NOV', '1969']",51,True,,,F5
-I11,"['Ryan', '/Faustino/']",M,"['8', 'AUG', '1920']",100,True,,,F2
-I12,"['Erica', '/Faustino/']",F,"['11', 'AUG', '1920']",100,True,,,F2
-I13,"['Kyle', '/Faustino/']",M,"['8', 'SEP', '1950']",50,False,"['13', 'OCT', '2000']",F2,F6
-I14,"['Lily', '/Balleras/']",F,"['9', 'OCT', '1950']",70,True,,,F6
-I15,"['Maggie', '/Faustino/']",F,"['8', 'DEC', '1998']",22,True,,F1,
-I16,"['Keith', '/Faustino/']",M,"['12', 'NOV', '1920']",100,True,,F2,F7
-I17,"['Rachel', '/Balleras/']",F,"['13', 'SEP', '1940']",80,True,,,F7
-I18,"['Henry', '/Ajero/']",M,"['9', 'SEP', '1950']",70,True,,F3,F8
-I19,"['Cary', '/Ajero/']",F,"['8', 'AUG', '1950']",70,True,,,F8
-I20,"['Ray', '/Faustino/']",M,"['4', 'SEP', '1950']",39,False,"['4', 'AUG', '1990']",F2,F9
-I21,"['Emma', '/Faustino/']",F,"['5', 'AUG', '1960']",39,False,"['4', 'OCT', '1999']",,F9
-I22,"['Will', '/Escamilla/']",M,"['8', 'SEP', '2020']",0,True,,F4,F10
-I23,"['Madonna', '/Chee/']",F,"['6', 'SEP', '2019']",1,True,,,F10
-I24,"['Zack', '/Faustino/']",M,"['9', 'JUL', '2020']",0,True,,F1,F11
-I25,"['Olivia', '/Hannigan/']",F,"['15', 'JUL', '1954']",66,True,,,F12
-I26,"['Joe', '/Roberti/']",M,"['13', 'SEP', '1960']",60,True,,,F12
-I27,"['Charles', '/Faustino/']",M,"['7', 'NOV', '2030']",-10,True,,F11,
-I28,"['Valentina', '/Faustino/']",F,"['6', 'OCT', '2030']",-10,True,,F11,
-I29,"['Ron', '/Carino/']",M,"['10', 'AUG', '2003']",17,True,,F10,
-I30,"['Lily', '/Carino/']",F,"['9', 'JUL', '2004']",16,True,,F10,
-I31,"['Henry', '/Carino/']",M,"['4', 'OCT', '2000']",20,True,,F10,
-I32,"['Jess', '/Carino/']",F,"['4', 'OCT', '2000']",20,True,,F10,
-I33,"['Rose', '/Carino/']",F,"['6', 'NOV', '2003']",17,True,,F10,
-I34,"['Kai', '/Carino/']",M,"['6', 'SEP', '2004']",16,True,,F10,
-I35,"['January', '/Carino/']",F,"['4', 'JAN', '2004']",17,True,,F10,
-I36,"['February', '/Carino/']",F,"['4', 'OCT', '2000']",20,True,,F10,
-I37,"['March', '/Edwards/']",M,"['5', 'MAR', '2003']",18,True,,F10,
-I38,"['April', '/Carino/']",F,"['4', 'APR', '2003']",17,True,,F10,
-I39,"['May', '/Carino/']",F,"['4', 'OCT', '2000']",20,True,,F10,
-I40,"['June', '/Carino/']",M,"['6', 'MAY', '2008']",12,True,,F10,
-I41,"['July', '/Carino/']",M,"['4', 'OCT', '2000']",20,True,,F10,
-I42,"['August', '/Carino/']",M,"['7', 'AUG', '2003']",17,True,,F10,
-I43,"['September', '/Carino/']",M,"['4', 'OCT', '2000']",,,,F10,
+I1,"['Bat', '/Wayne/']",M,"['11', 'NOV', '1999']",21,True,,F1,F4
+I2,"['Thomas', '/Wayne/']",M,"['10', 'OCT', '1963']",57,True,,F2,F1
+I3,"['Martha', '/Kane/']",F,"['2', 'AUG', '1965']",55,True,,F3,F1
+I4,['Robin'],M,"['12', 'SEP', '2008']",12,True,,F4,F9
+I5,"['Stephen', '/Kane/']",M,"['16', 'JUN', '1990']",30,True,,,F3
+I6,"['Elizabeth', '/Jameson/']",F,"['14', 'OCT', '1934']",58,False,"['11', 'DEC', '1992']",,F3
+I7,"['Frederick', '/Wayne/']",M,"['5', 'SEP', '1923']",65,False,"['6', 'JAN', '1989']",,F5
+I8,"['Mary', '/Mork/']",F,"['5', 'MAR', '1925']",73,False,"['3', 'AUG', '1998']",,F2
+I9,"['Sophie', '/Smith/']",F,"['2', 'NOV', '1930']",90,True,,,F6
+I10,"['Kanye', '/West/']",M,"['2', 'SEP', '1980']",40,True,,,F6
+I11,"['North', '/West/']",M,"['3', 'MAR', '2005']",16,True,,F6,
+I12,"['South', '/West/']",F,"['2', 'AUG', '2000']",20,True,,F6,F7
+I13,"['East', '/West/']",M,"['10', 'FEB', '2002']",19,True,,F6,F8
+I14,"['George', '/Wayne/']",,"['1', 'JUN', '1955']",65,True,,F5,
+I15,['Tee'],,,,,,F9,
+I16,"['Christian', '/West/']",M,"['10', 'SEP', '1990']",30,True,,,F7
+I17,"['Cousin1', '/West/']",F,,,,,F7,F10
+I18,"['Cousin2', '/West/']",M,,,,,F7,F11
+I19,"['Simba', '/West/']",F,,,,,,F11
+I20,"['Cousin3', '/West/']",M,,,,,F8,F10

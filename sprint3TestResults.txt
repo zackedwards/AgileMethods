@@ -15,28 +15,43 @@ People     ID                        Name Gender               Birthday   Age  A
 13  I14       ['George', '/Wayne/']      M   ['1', 'JUN', '1955']   NaN    NaN                    NaN    F5    NaN
 14  I14       ['George', '/Wayne/']      M   ['1', 'JUN', '1955']   NaN    NaN                    NaN    F5    NaN
 
-Families    Unnamed: 0   ID               Married              Divorced Husband ID              Husband Name Wife ID                   Wife Name               Children
-0            0   F1  ['2', 'JUL', '1998']                   NaN         I3      ['Martha', '/Kane/']      I2       ['Thomas', '/Wayne/']                 ['I1']
-1            1   F2  ['2', 'JUL', '1960']                   NaN         I7  ['Frederick', '/Wayne/']      I8          ['Mary', '/Mork/']                 ['I2']
-2            2   F3                   NaN                   NaN         I5     ['Stephen', '/Kane/']      I6  ['Elizabeth', '/Jameson/']                 ['I3']
-3            3   F4                   NaN                   NaN         I1        ['Bat', '/Wayne/']     NaN                         NaN                 ['I4']
-4            4   F5  ['9', 'OCT', '1950']  ['2', 'APR', '1957']         I7  ['Frederick', '/Wayne/']      I9       ['Sophie', '/Smith/']                ['I14']
-5            5   F6  ['2', 'MAY', '2000']                   NaN        I10       ['Kanye', '/West/']      I9       ['Sophie', '/Smith/']  ['I11', 'I12', 'I13']
-6            6   F6  ['2', 'MAY', '2000']                   NaN        I10       ['Kanye', '/West/']      I9       ['Sophie', '/Smith/']  ['I11', 'I12', 'I13']
-7            7   F7  ['2', 'JUL', '1998']                   NaN         I3      ['Martha', '/Kane/']      I1          ['Bat', '/Wayne/']                    NaN
-8            8   F8  ['4', 'MAY', '2018']                   NaN        I11       ['North', '/West/']     I12         ['South', '/West/']                    NaN
-9            9   F9  ['2', 'JUL', '1960']                   NaN        I14     ['George', '/Wayne/']     I12         ['South', '/West/']                    NaN
-10          10  F10  ['2', 'MAY', '2000']                   NaN        I14     ['George', '/Wayne/']      I9       ['Sophie', '/Smith/']                    NaN
+Families    Unnamed: 0   ID                Married              Divorced Husband ID              Husband Name Wife ID                   Wife Name               Children
+0            0   F1   ['2', 'JUL', '1998']                   NaN         I3      ['Martha', '/Kane/']      I2       ['Thomas', '/Wayne/']                 ['I1']
+1            1   F2   ['2', 'JUL', '1960']                   NaN         I7  ['Frederick', '/Wayne/']      I8          ['Mary', '/Mork/']                 ['I2']
+2            2   F3                    NaN                   NaN         I5     ['Stephen', '/Kane/']      I6  ['Elizabeth', '/Jameson/']                 ['I3']
+3            3   F4                    NaN                   NaN         I1        ['Bat', '/Wayne/']     NaN                         NaN                 ['I4']
+4            4   F5   ['9', 'OCT', '1950']  ['2', 'APR', '1957']         I7  ['Frederick', '/Wayne/']      I9       ['Sophie', '/Smith/']                ['I14']
+5            5   F6   ['2', 'MAY', '2000']                   NaN        I10       ['Kanye', '/West/']      I9       ['Sophie', '/Smith/']  ['I11', 'I12', 'I13']
+6            6   F6   ['2', 'MAY', '2000']                   NaN        I10       ['Kanye', '/West/']      I9       ['Sophie', '/Smith/']  ['I11', 'I12', 'I13']
+7            7   F7   ['2', 'JUL', '1998']                   NaN         I3      ['Martha', '/Kane/']      I1          ['Bat', '/Wayne/']                    NaN
+8            8   F8   ['4', 'MAY', '2018']                   NaN        I11       ['North', '/West/']     I12         ['South', '/West/']                    NaN
+9            9   F9   ['2', 'JUL', '1960']                   NaN        I14     ['George', '/Wayne/']     I12         ['South', '/West/']                    NaN
+10          10  F10   ['2', 'MAY', '2000']                   NaN        I14     ['George', '/Wayne/']      I9       ['Sophie', '/Smith/']                    NaN
+11          11   F6   ['2', 'MAY', '2000']                   NaN        I10       ['Kanye', '/West/']      I9       ['Sophie', '/Smith/']  ['I11', 'I12', 'I13']
+12          12   F7                    NaN                   NaN        I16   ['Christian', '/West/']     I12         ['South', '/West/']         ['I17', 'I18']
+13          13   F8                     []                   NaN        I13        ['East', '/West/']     I19         ['Simba', '/West/']                ['I20']
+14          14  F10  ['13', 'SEP', '2003']                   NaN        I20     ['Cousin3', '/West/']     I17       ['Cousin1', '/West/']                    NaN
+15          15  F11   ['7', 'OCT', '2001']                   NaN        I18     ['Cousin2', '/West/']      I9         ['Simba', '/West/']                    NaN
 
 ERROR: FAMILY: US18: F7: Spouse I3 is the father of I1 in family F1 and are married
 ERROR: FAMILY: US18: F10: Spouse I9 is the mother of I14 in family F5 and are married
 ERROR: FAMILY: US18: F8: Spouses I12 and I11 are siblings in family F6
 ERROR: FAMILY: US18: F8: Spouses I12 and I11 are siblings in family F6
+ERROR: FAMILY: US18: F8: Spouses I12 and I11 are siblings in family F6
+ERROR: FAMILY: US19: F10: Spouses I17 and I20 are cousins in family F6
+ERROR: FAMILY: US19: F10: Spouses I17 and I20 are cousins in family F6
+ERROR: FAMILY: US19: F10: Spouses I17 and I20 are cousins in family F6
+ERROR: FAMILY: US20: F7: Spouses I1 and I3 are aunt/uncle and niece/nephew in family F3
 ERROR: FAMILY: US21: F1: Gender of Husband I3 is not Male
 ERROR: FAMILY: US21: F1: Gender of Wife I2 is not Female
 ERROR: FAMILY: US21: F7: Gender of Husband I3 is not Male
 ERROR: FAMILY: US21: F7: Gender of Wife I1 is not Female
 ERROR: FAMILY: US22: F6: Family's ID already seen before, not unique
+ERROR: FAMILY: US22: F6: Family's ID already seen before, not unique
+ERROR: FAMILY: US22: F7: Family's ID already seen before, not unique
+ERROR: FAMILY: US22: F8: Family's ID already seen before, not unique
+ERROR: FAMILY: US22: F10: Family's ID already seen before, not unique
 ERROR: INDIVIDUAL: US22: I14: Individual's ID already seen before, not unique
 ANOMOLY: INDIVIDUAL: US23: I14: Does not have unique name ['George', '/Wayne/'] and birthday ['1', 'JUN', '1955']
+ANOMOLY: FAMILY: US24: F6: Does not have unique spouses, ['Kanye', '/West/'] and ['Sophie', '/Smith/'], and marriage date ['2', 'MAY', '2000']
 ANOMOLY: FAMILY: US24: F6: Does not have unique spouses, ['Kanye', '/West/'] and ['Sophie', '/Smith/'], and marriage date ['2', 'MAY', '2000']
