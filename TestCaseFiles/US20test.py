@@ -10,7 +10,7 @@ import pandas as pd
 import sys
 
 # Checks if husband id and wife id from a family are both in the children list of siblings in a list called row_fam
-def cousins_married_check(families, row_fam):
+def aunt_uncle_married_check(families, row_fam):
     aunts_uncle = row_fam["Children"] #aunts and uncles
     errors = []
     if not isinstance(aunts_uncle ,float):
@@ -34,7 +34,7 @@ def cousins_married_check(families, row_fam):
 
 class Test(unittest.TestCase):
     
-    def test_cousins_married(self):
+    def aunt_uncle_married_check(self):
         file = pd.read_csv('./Data/families.csv')
         errors = []
         for index, row_fam in file.iterrows():
