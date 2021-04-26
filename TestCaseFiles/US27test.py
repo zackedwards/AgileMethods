@@ -19,7 +19,7 @@ def include_age_check(individuals_df):
 
 class Test(unittest.TestCase):
     def test_age_exists_check(self):
-        file = pd.read_csv('./Data/individuals.csv')
+        file = pd.read_csv('./Data/individuals4.csv')
         self.assertEqual(include_age_check(file), [])
 
 if __name__ == "__main__":
