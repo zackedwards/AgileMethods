@@ -1,0 +1,56 @@
+People     ID                        Name Gender               Birthday   Age  Alive                  Death Child Spouse
+0    I1          ['Bat', '/Wayne/']      M  ['11', 'NOV', '1999']  21.0   True                    NaN    F1     F4
+1    I2       ['Thomas', '/Wayne/']      M  ['10', 'OCT', '1963']  57.0   True                    NaN    F2     F1
+2    I3        ['Martha', '/Kane/']      F   ['2', 'AUG', '1965']  55.0   True                    NaN    F3     F1
+3    I4                   ['Robin']      M  ['12', 'SEP', '2008']  12.0   True                    NaN    F4     F9
+4    I5       ['Stephen', '/Kane/']      M  ['16', 'JUN', '1990']  30.0   True                    NaN   NaN     F3
+5    I6  ['Elizabeth', '/Jameson/']      F  ['14', 'OCT', '1934']  58.0  False  ['11', 'DEC', '1992']   NaN     F3
+6    I7    ['Frederick', '/Wayne/']      M   ['5', 'SEP', '1923']  65.0  False   ['6', 'JAN', '1989']   NaN     F5
+7    I8          ['Mary', '/Mork/']      F   ['5', 'MAR', '1925']  73.0  False   ['3', 'AUG', '1998']   NaN     F2
+8    I9       ['Sophie', '/Smith/']      F   ['2', 'NOV', '1930']  90.0   True                    NaN   NaN     F6
+9   I10         ['Kanye', '/West/']      M   ['2', 'SEP', '1980']  40.0   True                    NaN   NaN     F6
+10  I11         ['North', '/West/']      M   ['3', 'MAR', '2005']  16.0   True                    NaN    F6    NaN
+11  I12         ['South', '/West/']      F   ['2', 'AUG', '2000']  20.0   True                    NaN    F6     F7
+12  I13          ['East', '/West/']      M  ['10', 'FEB', '2002']  19.0   True                    NaN    F6     F8
+13  I14       ['George', '/Wayne/']    NaN   ['1', 'JUN', '1955']  65.0   True                    NaN    F5    NaN
+14  I15                     ['Tee']    NaN                    NaN   NaN    NaN                    NaN    F9    NaN
+15  I16     ['Christian', '/West/']      M  ['10', 'SEP', '1990']  30.0   True                    NaN   NaN     F7
+16  I17       ['Cousin1', '/West/']      F                    NaN   NaN    NaN                    NaN    F7    F10
+17  I18       ['Cousin2', '/West/']      M                    NaN   NaN    NaN                    NaN    F7    F11
+18  I19         ['Simba', '/West/']      F                    NaN   NaN    NaN                    NaN   NaN    F11
+19  I20       ['Cousin3', '/West/']      M                    NaN   NaN    NaN                    NaN    F8    F10
+20  I21          ['Bat', '/Wayne/']      M  ['11', 'NOV', '1999']   NaN    NaN                     F5    F1    NaN
+
+Families    Unnamed: 0   ID                Married               Divorced Husband ID              Husband Name Wife ID                   Wife Name               Children
+0            0   F1   ['2', 'JUL', '1998']                    NaN         I2     ['Thomas', '/Wayne/']      I3        ['Martha', '/Kane/']          ['I1', 'I21']
+1            1   F2   ['2', 'JUL', '1960']                    NaN         I7  ['Frederick', '/Wayne/']      I8          ['Mary', '/Mork/']                 ['I2']
+2            2   F3                    NaN                    NaN         I5     ['Stephen', '/Kane/']      I6  ['Elizabeth', '/Jameson/']                 ['I3']
+3            3   F4                    NaN                    NaN         I1        ['Bat', '/Wayne/']     NaN                         NaN                 ['I4']
+4            4   F9                    NaN                    NaN         I4                 ['Robin']     NaN                         NaN                ['I15']
+5            5   F5   ['9', 'OCT', '1950']   ['2', 'APR', '1957']         I7  ['Frederick', '/Wayne/']      I9       ['Sophie', '/Smith/']                ['I14']
+6            6   F6   ['2', 'MAY', '2000']  ['13', 'SEP', '2003']        I10       ['Kanye', '/West/']      I9       ['Sophie', '/Smith/']  ['I11', 'I12', 'I13']
+7            7   F7                    NaN                    NaN        I16   ['Christian', '/West/']     I12         ['South', '/West/']         ['I17', 'I18']
+8            8   F8                     []                    NaN        I13        ['East', '/West/']     I19         ['Simba', '/West/']                ['I20']
+9            9  F10  ['13', 'SEP', '2003']  ['13', 'SEP', '2003']        I20     ['Cousin3', '/West/']     I17       ['Cousin1', '/West/']                    NaN
+10          10  F11   ['7', 'OCT', '2001']                    NaN        I18     ['Cousin2', '/West/']      I9         ['Simba', '/West/']                    NaN
+
+ANOMOLY: FAMILY: US25: F1: More than one child is not unique
+ERROR: INDIVIDUAL: US26: I9: Individual does not have correct family ID F6 under spouse
+ERROR: FAMILY: US27: I15: Age of indivudal is not recorded
+ERROR: FAMILY: US27: I17: Age of indivudal is not recorded
+ERROR: FAMILY: US27: I18: Age of indivudal is not recorded
+ERROR: FAMILY: US27: I19: Age of indivudal is not recorded
+ERROR: FAMILY: US27: I20: Age of indivudal is not recorded
+ERROR: FAMILY: US27: I21: Age of indivudal is not recorded
+ERROR: FAMILY: US28: F6: Age of Children is not in order
+ANOMOLY: INDIVIDUAL: US29: I6: Is deceased
+ANOMOLY: INDIVIDUAL: US29: I7: Is deceased
+ANOMOLY: INDIVIDUAL: US29: I8: Is deceased
+ANOMOLY: INDIVIDUAL: US30: I2: Is living and married
+ANOMOLY: INDIVIDUAL: US30: I3: Is living and married
+ANOMOLY: INDIVIDUAL: US30: I13: Is living and married
+ANOMOLY: INDIVIDUAL: US30: I9: Is living and married
+['George', '/Wayne/']
+['I1', 'I21']
+['I11', 'I12', 'I13']
+['I17', 'I18']
