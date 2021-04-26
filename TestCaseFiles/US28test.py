@@ -26,16 +26,14 @@ def sibling_age_check(families_df, individuals_df):
                         continue
                 sorted_ages=sorted(ages, reverse=True)
                 if ages != sorted_ages:
-                    print(ages, sorted_ages)
-                    print("ERROR: FAMILY: US28: {}: Age of Children is not in order".format(row["ID"]))
                     errors.append("ERROR: FAMILY: US28: {}: Age of Children is not in order".format(row["ID"]))
     return errors
 
 
 class Test(unittest.TestCase):
     def test_age_exists_check(self):
-        file1=pd.read_csv('./Data/families.csv')
-        file2=pd.read_csv('./Data/individuals.csv')
+        file1=pd.read_csv('./Data/families4.csv')
+        file2=pd.read_csv('./Data/individuals4.csv')
         self.assertEqual(sibling_age_check(file1, file2), ['ERROR: FAMILY: US28: F6: Age of Children is not in order'])
 
 if __name__ == "__main__":
