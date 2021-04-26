@@ -27,7 +27,6 @@ def consistent_individuals_and_families(individuals, families):
         for index, fam_row in families.iterrows():
             children = fam_row['Children']
             fam_id = fam_row["ID"]
-            print(row["ID"], row["Child"], fam_id)
             if not isinstance(children ,float):
                 if row["Child"] == fam_id:
                     if not (row["ID"] in children):
@@ -39,11 +38,10 @@ def consistent_individuals_and_families(individuals, families):
             no_children = True
         else:
             children = literal_eval(fam_row['Children'])
-        print(children)
         for index, indi_row in individuals.iterrows():
             if indi_row["ID"] == fam_row["Husband ID"] or indi_row["ID"] == fam_row["Wife ID"]:
                 if indi_row["Spouse"] != fam_row["ID"] and not isinstance(fam_row["Divorced"] ,float) :
-                    errors.append("ERROR: INDIVIDUAL: US26: {}: Individual does not have correct family ID under spouse".format(indi_row["ID"]))
+                    errors.append("ERROR: INDIVIDUAL: US26: {}: Individual does not have correct family ID {} under spouse".format(indi_row["ID"], indi_row["Spouse"]))
                 if indi_row["ID"] == fam_row["Wife ID"]: 
                     wife_found = True
                 if indi_row["ID"] == fam_row["Husband ID"]: 
@@ -56,12 +54,11 @@ def consistent_individuals_and_families(individuals, families):
             for i in children:
                 errors.append("ERROR: FAMILY: US26: {}: Child {} is not an individual in individuals record".format(fam_row["ID"], indi_row["ID"]))
 
-    print(errors)
     return errors
 
 class Test(unittest.TestCase):
     def testUniqueSpousesAndMarriage(self):
-        self.assertEqual(consistent_individuals_and_families(pd.read_csv('../Data/individuals3.csv'), pd.read_csv('../Data/families3.csv')), 
+        self.assertEqual(consistent_individuals_and_families(pd.read_csv('../Data/individuals4.csv'), pd.read_csv('../Data/families4.csv')), 
         ['ERROR: INDIVIDUAL: US26: I1: Individual does not have correct family ID under spouse', 
         'ERROR: INDIVIDUAL: US26: I9: Individual does not have correct family ID under spouse', 
         'ERROR: INDIVIDUAL: US26: I10: Individual does not have correct family ID under spouse', 
