@@ -6,7 +6,7 @@ from US25test import unique_child_name_and_birth #Takes in individualsDF & famRo
 from US26test import consistent_individuals_and_families #Takes in familiesDF & individualsDF
 from US27test import include_age_check #Takes in individualsDF
 
-from US28test import aunt_uncle_married_check #Takes in familiesDF
+from US28test import sibling_age_check #Takes in familiesDF and individualsDF
 from US29test import correct_gender_check #Takes in individualsDF & familiesDF
 from US30test import unique_ids_check #Takes in individualsDF & familiesDF
 
@@ -15,15 +15,16 @@ from US32test import ListMultipleBirths #Takes in familiesDF
 
 individuals = pd.read_csv('./Data/individuals3.csv')
 families = pd.read_csv('./Data/families3.csv')
-
 errors = []
-errors += consistent_individuals_and_families(individuals, families)
-errors += include_age_check(individuals)
-errors += ListLivingSingle(individuals)
-errors += ListMultipleBirths(families)
 
 for index, famRow in families.iterrows():
    errors += unique_child_name_and_birth(individuals, famRow) 
+
+errors += consistent_individuals_and_families(individuals, families)
+errors += include_age_check(individuals)
+errors += sibling_age_check(families, individuals)
+errors += ListLivingSingle(individuals)
+errors += ListMultipleBirths(families)
 
 TestResults = open("sprint4TestResults.txt", "w")
 terminalOutput = ""
