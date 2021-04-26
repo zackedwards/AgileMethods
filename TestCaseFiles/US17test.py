@@ -23,9 +23,9 @@ def parents_marry_children_check(families, row_fam):
         for index, row_fam2 in families.iterrows():
             if isinstance(row_fam2["Wife ID"],str) and isinstance(row_fam2["Husband ID"],str):
                 if mother == row_fam2["Wife ID"] and row_fam2["Husband ID"] in children:
-                    errors.append("ERROR: FAMILY: US18: {}: Spouse {} is the mother of {} in family {} and are married".format(row_fam2["ID"], mother, row_fam2["Husband ID"], row_fam["ID"]))
+                    errors.append("ERROR: FAMILY: US17: {}: Spouse {} is the mother of {} in family {} and are married".format(row_fam2["ID"], mother, row_fam2["Husband ID"], row_fam["ID"]))
                 elif father == row_fam2["Husband ID"] and row_fam2["Wife ID"] in children:
-                    errors.append("ERROR: FAMILY: US18: {}: Spouse {} is the father of {} in family {} and are married".format(row_fam2["ID"], father, row_fam2["Wife ID"], row_fam["ID"]))
+                    errors.append("ERROR: FAMILY: US17: {}: Spouse {} is the father of {} in family {} and are married".format(row_fam2["ID"], father, row_fam2["Wife ID"], row_fam["ID"]))
         return errors
     else: 
         return []

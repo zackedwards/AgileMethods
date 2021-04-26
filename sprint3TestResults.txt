@@ -32,8 +32,8 @@ Families    Unnamed: 0   ID                Married              Divorced Husband
 13          13  F14   ['7', 'OCT', '2001']                   NaN        I18     ['Cousin2', '/West/']      I9         ['Simba', '/West/']                    NaN
 14          14  F14   ['7', 'OCT', '2001']                   NaN        I18     ['Cousin2', '/West/']      I9         ['Simba', '/West/']                    NaN
 
-ERROR: FAMILY: US18: F6: Spouse I3 is the father of I1 in family F1 and are married
-ERROR: FAMILY: US18: F9: Spouse I9 is the mother of I14 in family F5 and are married
+ERROR: FAMILY: US17: F6: Spouse I3 is the father of I1 in family F1 and are married
+ERROR: FAMILY: US17: F9: Spouse I9 is the mother of I14 in family F5 and are married
 ERROR: FAMILY: US18: F7: Spouses I12 and I11 are siblings in family F10
 ERROR: FAMILY: US19: F13: Spouses I17 and I20 are cousins in family F10
 ERROR: FAMILY: US20: F6: Spouses I1 and I3 are aunt/uncle and niece/nephew in family F3
