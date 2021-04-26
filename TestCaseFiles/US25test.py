@@ -18,11 +18,12 @@ def unique_child_name_and_birth(individuals, fam_row):
         fam_id = fam_row["ID"]
         for index, row in individuals.iterrows():
             if row["ID"] in children:
-                birth_dt = convertStringToDatetime(row['Birthday'])
-                if row["Name"] in seen and seen.get(row["Name"]) == birth_dt:
-                    errors.append("ANOMOLY: FAMILY: US25: {}: More than one child is not unique".format(fam_id))
-                else:
-                    seen[row["Name"]] = birth_dt
+                if not isinstance(row['Birthday'] ,float):
+                    birth_dt = convertStringToDatetime(row['Birthday'])
+                    if row["Name"] in seen and seen.get(row["Name"]) == birth_dt:
+                        errors.append("ANOMOLY: FAMILY: US25: {}: More than one child is not unique".format(fam_id))
+                    else:
+                        seen[row["Name"]] = birth_dt
     return errors
 
 class Test(unittest.TestCase):
@@ -32,7 +33,7 @@ class Test(unittest.TestCase):
         for index, row_fam in file.iterrows():
             if index == 0:
                 print(row_fam["ID"])
-                self.assertEqual(unique_child_name_and_birth(pd.read_csv('../Data/individuals4.csv'), row_fam), ['ANOMOLY: FAMILY: US25: F10: More than one child is not unique'])
+                self.assertEqual(unique_child_name_and_birth(pd.read_csv('../Data/individuals4.csv'), row_fam), ['ANOMOLY: FAMILY: US25: F1: More than one child is not unique'])
 
 if __name__ == "__main__":
     unittest.main()
