@@ -19,8 +19,7 @@ def ListLivingSingle(indi_df):
 
         if (age > 30) and not isinstance(spouse, str):
             livingSingle.append(name)
-
-    return livingSingle
+    return ["ERROR: INDIVIDUALS: US31: List ofsingles under 30: {}".format(livingSingle)]
 
 class Test(unittest.TestCase):
     def testListLivingSingle(self):

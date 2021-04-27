@@ -19,7 +19,7 @@ def ListMultipleBirths(fam_df):
            if ',' in children_list:
                multipleBirths.append(children_list)
 
-    return multipleBirths
+    return ["ERROR: FAMILY: US32: List of multiple births: {}".format(multipleBirths)]
 
 class Test(unittest.TestCase):
     def testListMultipleBirths(self):
