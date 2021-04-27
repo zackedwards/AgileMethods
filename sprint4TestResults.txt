@@ -50,7 +50,5 @@ ANOMOLY: INDIVIDUAL: US30: I2: Is living and married
 ANOMOLY: INDIVIDUAL: US30: I3: Is living and married
 ANOMOLY: INDIVIDUAL: US30: I13: Is living and married
 ANOMOLY: INDIVIDUAL: US30: I9: Is living and married
-['George', '/Wayne/']
-['I1', 'I21']
-['I11', 'I12', 'I13']
-['I17', 'I18']
+ERROR: INDIVIDUALS: US31: List ofsingles under 30: ["['George', '/Wayne/']"]
+ERROR: FAMILY: US32: List of multiple births: ["['I1', 'I21']", "['I11', 'I12', 'I13']", "['I17', 'I18']"]
